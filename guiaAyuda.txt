@@ -1,0 +1,58 @@
+
+
+### Estación 1: Palacio de Santa Cruz
+
+- **Pista 1:** No cuentes ángeles ni querubines. Busca figuras humanas que parecen estar sufriendo o atrapadas.
+    
+- **Pista 2:** Fíjate en la base del relieve, justo a los pies de la figura central (San Miguel). Hay un hombre a cada lado.
+    
+- **Solución Directa:** Son **2** figuras (representan a los presos, ya que antes esto era una cárcel).
+    
+
+### Estación 2: Calle de las Huertas (Quevedo)
+
+- **Pista 1:** Busca el texto grabado en letras doradas en el suelo, no en las placas de las paredes.
+    
+- **Pista 2:** La cita está dividida en líneas cortas. Cuenta: 1 (Poderoso), 2 (caballero), 3 (es don), 4 (Dinero).
+    
+- **Solución Directa:** La palabra es **Dinero**.
+    
+
+### Estación 3: Casa de Lope de Vega
+
+- **Pista 1:** La inscripción está escrita en latín antiguo sobre la puerta de madera.
+    
+- **Pista 2:** El número está al final de todo el texto, a la derecha. Son cuatro cifras.
+    
+- **Solución Directa:** El año es **1610**.
+    
+
+### Estación 4: Estatua de Cervantes
+
+- **Pista 1:** Mira el relieve de bronce que hay en el lateral del pedestal de la estatua (el que mira hacia el Congreso).
+    
+- **Pista 2:** Don Quijote está cargando contra el molino. Cuenta cuántas "palas" o brazos tiene ese molino de viento.
+    
+- **Solución Directa:** Son **4** aspas.
+    
+
+### Estación 5: Plaza de Santa Ana (Calderón)
+
+- **Pista 1:** Los relieves están en la parte baja del monumento, rodeando la base de la estatua de Calderón.
+    
+- **Pista 2:** Busca el relieve que tiene el título "El Alcalde de Zalamea" grabado debajo. Cuenta todas las personas que aparecen en esa escena específica.
+    
+- **Solución Directa:** Hay **5** personajes.
+    
+
+---
+
+### Un consejo extra para tu Google Form:
+
+Para que el juego sea fluido, te recomiendo configurar la **"Validación de respuestas"** en el formulario de la siguiente manera:
+
+1. Haz que la pregunta sea **obligatoria**.
+    
+2. Usa **"Validación de respuestas"** -> **"Número"** -> **"Es igual a"**.
+    
+3. En el apartado de **"Texto de error personalizado"**, escribe algo como: _"¡Cerca! Pero la Sociedad del Lirio exige precisión. ¿Seguro que has contado bien? (Si necesitas ayuda, consulta la Pista 1)"_.

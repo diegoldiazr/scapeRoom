@@ -1,0 +1,81 @@
+## 🎭 Estación 1: El Despertar del Custodio
+
+**Ubicación:** Plaza de la Provincia (Frente al Palacio de Santa Cruz / Ministerio de Exteriores).
+
+- **Texto Narrativo:** "Habéis recibido un sobre lacrado. Dentro, una nota de un antiguo bibliotecario de la Real Academia: _'El secreto de Cervantes no está en sus libros, sino en las piedras que pisó'_. Vuestra misión comienza frente a la antigua Cárcel de Corte."
+    
+- **Instrucción de Observación:** Dirigíos a la fachada principal del **Palacio de Santa Cruz**. Sobre la puerta principal hay un relieve del Arcángel San Miguel.
+    
+- **El Acertijo:** "¿Cuántas figuras humanas (sin contar al ángel ni figuras celestiales) aparecen esculpidas en el relieve justo encima de la puerta principal?"
+    
+- **Solución:** **2** (Son dos prisioneros encadenados a los pies del ángel).
+    
+- **Mensaje de Éxito:** "¡Correcto! Los prisioneros señalan el camino. Dirigíos ahora hacia la calle de la derecha, buscando el rastro de los escritores."
+    
+
+---
+
+## 🖋️ Estación 2: El Suelo que Habla
+
+**Ubicación:** Calle de las Huertas (Esquina con Calle de San Salvador).
+
+- **Texto Narrativo:** "Os adentráis en el Barrio de las Letras. Aquí, los autores del Siglo de Oro dejaron sus mejores versos grabados en oro sobre el pavimento para que nunca fueran olvidados."
+    
+- **Instrucción de Observación:** Buscad en el suelo la cita de **Francisco de Quevedo** que empieza por _"Poderoso caballero..."_.
+    
+- **El Acertijo:** "En el fragmento de Quevedo grabado en el suelo, ¿cuál es la **última palabra** de la cuarta línea de la cita?"
+    
+- **Solución:** **Dinero** (La cita es: "Poderoso caballero / es don / Dinero").
+    
+- **Mensaje de Éxito:** "Efectivamente. El dinero corrompe, pero la literatura sobrevive. Seguid bajando por la calle Huertas hacia el corazón del barrio."
+    
+
+---
+
+## 🏰 Estación 3: La Casa del Enemigo
+
+**Ubicación:** Calle de Cervantes, 11 (Casa-Museo de Lope de Vega).
+
+- **Texto Narrativo:** "Curiosamente, la casa donde vivió Lope de Vega está en la calle dedicada a su mayor rival: Miguel de Cervantes. El manuscrito que buscáis pasó por estas manos."
+    
+- **Instrucción de Observación:** Mirad el dintel de granito (la parte superior) de la puerta principal de la casa. Hay una inscripción en latín.
+    
+- **El Acertijo:** "¿Cuál es el **año** que aparece tallado en piedra al final de la inscripción sobre la puerta?"
+    
+- **Solución:** **1610**.
+    
+- **Mensaje de Éxito:** "¡Exacto! 1610, el año en que Lope compró esta casa. El tiempo corre, el manuscrito está cerca."
+    
+
+---
+
+## ⚔️ Estación 4: El Guardián de Bronce
+
+**Ubicación:** Plaza de las Cortes (Estatua de Miguel de Cervantes, frente al Congreso).
+
+- **Texto Narrativo:** "Habéis llegado ante el autor. Cervantes os observa desde su pedestal. Se dice que su mano izquierda oculta la clave final de la Sociedad del Lirio."
+    
+- **Instrucción de Observación:** Rodead el pedestal de la estatua. Veréis dos relieves de bronce laterales que representan escenas del Quijote.
+    
+- **El Acertijo:** "En el relieve donde aparece Don Quijote montado a caballo, ¿cuántas **aspas** tiene el molino de viento que se ve al fondo?"
+    
+- **Solución:** **4**.
+    
+- **Mensaje de Éxito:** "¡Bien visto! Cuatro aspas para cuatro siglos de misterio. Solo queda un paso más."
+    
+
+---
+
+## 🏆 Estación 5: El Descubrimiento Final
+
+**Ubicación:** Plaza de Santa Ana (Estatua de Calderón de la Barca).
+
+- **Texto Narrativo:** "El rastro termina aquí, bajo la mirada de Calderón de la Barca. La vida es sueño, pero el tesoro es real. Para abrir el cofre virtual, necesitáis el último código."
+    
+- **Instrucción de Observación:** Mirad los bajorrelieves en la base de la estatua de Calderón (representan sus obras).
+    
+- **El Acertijo:** "Buscad el relieve de 'El Alcalde de Zalamea'. ¿Cuántos personajes aparecen representados en total en esa escena esculpida?"
+    
+- **Solución:** **5**.
+    
+- **Mensaje Final:** "¡MISIÓN CUMPLIDA! Habéis salvado el manuscrito. La Sociedad del Lirio os agradece vuestro servicio. Ahora, guardad vuestras lupas y disfrutad de un merecido descanso. Estáis en la Plaza de Santa Ana, rodeados de los mejores sitios para comer de Madrid."

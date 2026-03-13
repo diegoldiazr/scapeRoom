@@ -1,0 +1,89 @@
+Este manual está diseñado para que tú (o quien supervise el juego) tengas todo el control bajo la manga durante el **playtesting**. Incluye la logística "invisible" que hará que la experiencia parezca magia para los jugadores.
+
+---
+
+# 📖 Manual del Game Master: "El Último Verso" (Madrid)
+
+## 1. Ficha Técnica del Juego
+
+- **Zona:** Barrio de las Letras (Centro).
+    
+- **Punto de Inicio:** Plaza de la Provincia (Cerca de Plaza Mayor).
+    
+- **Punto de Finalización:** Plaza de Santa Ana.
+    
+- **Distancia:** 1.5 km aprox.
+    
+- **Duración estimada:** 75 - 90 minutos.
+    
+- **Dificultad:** Media-Baja (Enfoque en observación).
+    
+
+---
+
+## 2. Check-list de Preparación (Antes de salir)
+
+- [ ] **Batería:** El móvil del Game Master y de los jugadores debe estar al **100%**. Recomienda una PowerBank.
+    
+- [ ] **Conexión:** Comprueba que el enlace de Google Forms sea "Público" (cualquiera con el enlace puede responder).
+    
+- [ ] **Clima:** Si llueve mucho, ten previsto un "Plan B" (enviar fotos de las fachadas por WhatsApp para que resuelvan desde una cafetería).
+    
+- [ ] **Material extra:** Lleva un cuaderno y boli por si algún equipo prefiere dibujar o anotar letras para descifrar.
+    
+
+---
+
+## 3. Hoja de Ruta y Soluciones (Resumen Maestro)
+
+|**Estación**|**Ubicación**|**Clave de Paso**|**Acción del GM / Observación**|
+|---|---|---|---|
+|**1. El Custodio**|Plaza de la Provincia|**2**|Asegúrate de que no cuenten al ángel. Solo los humanos encadenados.|
+|**2. El Suelo**|C/ Huertas (Quevedo)|**Dinero**|Cuidado con los peatones; que no se detengan en mitad del flujo de gente.|
+|**3. La Casa**|C/ Cervantes 11|**1610**|Si la puerta está abierta (museo), que miren el dintel exterior, no dentro.|
+|**4. El Guardián**|Pza. de las Cortes|**4**|El relieve está en el lateral. Ojo con el cruce de cebra hacia el Congreso.|
+|**5. El Final**|Pza. Santa Ana|**5**|El relieve de "El Alcalde de Zalamea" está en la base.|
+
+---
+
+## 4. Protocolo de "Playtesting" (Qué observar)
+
+Durante la prueba con amigos/familia, no les des las respuestas. Anota en tu cuaderno:
+
+- **Tiempos muertos:** ¿Cuánto tardan en caminar de la Estación 2 a la 3? (Si es mucho, la historia debe ser más larga en el móvil).
+    
+- **Ambigüedad:** ¿Han intentado poner "dos" en vez de "2"? -> _Ajuste: Configura el Form para que acepte ambos._
+    
+- **Distracciones:** ¿Hay alguna obra o andamio tapando algo hoy?
+    
+- **Cansancio:** ¿Llegan a la estación 4 con ganas de rendirse? Si es así, reduce la dificultad del acertijo 4.
+    
+
+---
+
+## 5. Gestión de Crisis y Pistas
+
+Si el equipo te mira con cara de pánico:
+
+1. **Nivel 1 (La Sugerencia):** "Leed el texto del formulario otra vez en voz alta. La respuesta suele estar en la última frase".
+    
+2. **Nivel 2 (La Dirección):** "No miréis hacia arriba, la respuesta está a la altura de vuestros ojos (o pies)".
+    
+3. **Nivel 3 (El Salto):** "La respuesta es X. Avanzad a la siguiente zona para no perder el hilo de la historia".
+    
+
+---
+
+## 6. El Final: Logística Gastronómica
+
+Como el juego termina en **Plaza de Santa Ana**, aquí tienes 3 recomendaciones para "soltar" a los jugadores al terminar:
+
+- **Para raciones clásicas:** _La lola_ o _Las Diez Tapas_ en la misma plaza.
+    
+- **Para algo rápido:** _Museo del Jamón_ (Carrera de San Jerónimo).
+    
+- **Para celebrar el éxito:** _Cervecería Alemana_ (Un clásico histórico de 1904).
+    
+
+---
+
