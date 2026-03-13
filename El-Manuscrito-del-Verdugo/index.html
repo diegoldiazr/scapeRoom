@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Manuscrito del Verdugo | Escape Room Madrid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- INTRO -->
+        <section id="screen-intro" class="screen active">
+            <div class="card">
+                <h1>El Manuscrito del Verdugo</h1>
+                <p style="text-align: center; color: #888;">Justicia y Sangre en los Austrias</p>
+                <div class="parchment" style="margin: 20px 0;">
+                    <p>Habéis encontrado un diario manchado de hollín. Pertenece al último verdugo de la Villa.</p>
+                    <p>En sus páginas confiesa que ejecutó a hombres inocentes para ocultar un secreto real. Si no descifráis sus paraderos antes de que se cumpla el tiempo, sus almas os perseguirán para siempre.</p>
+                    <p><strong>NORMAS DEL CADALSO:</strong></p>
+                    <ul>
+                        <li>⏳ 90 minutos de vida.</li>
+                        <li>❌ Error = -5 minutos.</li>
+                        <li>💡 Pista = -5 minutos.</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary" onclick="Game.start()">Aceptar el Desafío</button>
+            </div>
+        </section>
+
+        <!-- GAME -->
+        <section id="screen-game" class="screen">
+            <div id="penalty-msg" style="position:fixed; top:20%; left:0; width:100%; text-align:center; color:red; font-weight:bold; font-size:2rem; display:none; z-index:100;">-5:00</div>
+            <div id="timer" style="text-align:center; font-size:2.5rem; font-family:'Cinzel'; color:var(--primary-color);">90:00</div>
+            <div class="progress-container"><div id="bar" class="progress-bar"></div></div>
+            
+            <div class="card">
+                <h2 id="st-title">Estación</h2>
+                <a id="st-map" href="#" target="_blank" class="btn-map">📍 Ver Mapa del Crimen</a>
+                <img id="st-img" src="" class="location-img">
+                <div class="parchment"><p id="st-narrative"></p></div>
+                
+                <div style="margin-top:20px;">
+                    <h3 id="st-question"></h3>
+                    <input type="text" id="ans-input" placeholder="Tu respuesta..." autocomplete="off">
+                    <div id="feedback"></div>
+                    <button class="btn btn-primary" onclick="Game.check()">Confirmar</button>
+                    <button class="btn btn-secondary" onclick="Game.showHint()">💡 Pedir Gracia (Pista)</button>
+                    <button class="btn" style="color:#d4af37; border-color:#d4af37;" onclick="Game.showCuriosity()">📜 Leyendas Negras</button>
+                    <div id="hint-1" class="hint-box"></div>
+                    <div id="hint-2" class="hint-box"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUCCESS -->
+        <section id="screen-success" class="screen">
+            <div class="card" style="text-align:center;">
+                <h1 style="color:white;">¡CONCEDIDO!</h1>
+                <div class="parchment"><p id="succ-msg"></p></div>
+                <button class="btn btn-primary" onclick="Game.next()">Hacia el siguiente crimen</button>
+            </div>
+        </section>
+
+        <!-- FINAL -->
+        <section id="screen-final" class="screen">
+            <div class="card">
+                <h1>Libertad</h1>
+                <div class="parchment">
+                    <p>Habéis descifrado el manuscrito. Las almas de los inocentes descansan y vosotros habéis salvado vuestro honor.</p>
+                    <p>El verdugo ha guardado su hacha. Madrid os debe una.</p>
+                    <p style="font-size: 1.5rem; text-align: center; margin: 20px 0;">Tiempo: <span id="final-time"></span></p>
+                </div>
+                <button class="btn btn-primary" onclick="location.reload()">Otra Partida</button>
+                <a href="../index.html" class="btn btn-secondary" style="text-align:center; text-decoration:none;">Volver al Inicio</a>
+            </div>
+        </section>
+
+        <!-- MODAL -->
+        <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center;">
+            <div class="parchment" style="max-width:90%; border:2px solid var(--primary-color);">
+                <div id="modal-content"></div>
+                <button class="btn btn-primary" onclick="Game.closeModal()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

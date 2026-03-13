@@ -1,0 +1,59 @@
+# 🔪 STREET ESCAPE: EL MANUSCRITO DEL VERDUGO
+
+## 🎭 Estación 1: La Sombra del Cadalso
+**Ubicación:** Plaza de la Provincia (Frente al Palacio de Santa Cruz).
+
+- **Texto Narrativo:** Bienvenidos, investigadores. Este edificio no siempre fue un palacio de diplomacia; fue la temida Cárcel de Corte. Aquí, los reos esperaban su ejecución mientras el verdugo afilaba su hacha. Se dice que uno de ellos dejó un mensaje cifrado antes de subir al patíbulo.
+- **Instrucción de Observación:** Localizad la placa que identifica el edificio como antigua cárcel.
+- **El Acertijo:** "El verdugo contaba los días en siglos. Buscad el siglo en que se terminó de construir este lugar de llantos y sombras. Ese número abrirá vuestro primer candado mental."
+- **Solución:** 17.
+- **Mensaje de Éxito:** Habéis escapado de los calabozos. El siguiente rastro de sangre lleva hacia la antigua muralla, donde las puertas se cerraban para dejar fuera a los demonios.
+- **Curiosidades:** Los presos más famosos de Madrid pasaron por aquí. La expresión "dormir en la trena" tiene raíces en las duras condiciones de estas celdas.
+
+---
+
+## 🎭 Estación 2: El Mural de las Llamas
+**Ubicación:** Plaza de Puerta Cerrada.
+
+- **Texto Narrativo:** Esta plaza debe su nombre a una de las puertas de la muralla cristiana que siempre estaba cerrada debido a los asaltos y crímenes que ocurrían en sus túneles. En sus muros hay un mensaje sobre el origen de Madrid que parece una profecía.
+- **Instrucción de Observación:** Mirad los murales artísticos en las fachadas altas de la plaza.
+- **El Acertijo:** Completad la frase que define el alma de esta ciudad asesina: "Fui sobre agua edificada, mis muros de _________ son". (Pista: lo que usa el verdugo para quemar las pruebas).
+- **Solución:** FUEGO.
+- **Mensaje de Éxito:** ¡Correcto! El fuego purifica, pero también oculta. Seguid bajando hacia la calle donde el odio se convirtió en leyenda.
+- **Curiosidades:** Madrid se fundó sobre un acuífero, y sus murallas eran de sílex, que al ser golpeado por las flechas echaba chispas; de ahí la leyenda del fuego.
+
+---
+
+## 🎭 Estación 3: El Crimen del Criado
+**Ubicación:** Calle de la Cabeza.
+
+- **Texto Narrativo:** Cuenta la historia que un criado asesinó a su amo, le cortó la cabeza y huyó. Años después, regresó con la cabeza oculta bajo su capa, que milagrosamente se convirtió en la cabeza de un cordero ante la guardia, para luego volver a ser humana.
+- **Instrucción de Observación:** Buscad el relieve o la placa que conmemora esta macabra historia.
+- **El Acertijo:** "¿En qué número de portal se encuentra el busto que recuerda al decapitado? Ese número es la edad que el criado nunca llegó a superar tras ser descubierto."
+- **Solución:** 13.
+- **Mensaje de Éxito:** La justicia es ciega pero implacable. Deja atrás la cabeza y busca la pluma; los escritores del Siglo de Oro también sabían de muertes y venganzas.
+- **Curiosidades:** Esta es una de las leyendas más famosas de Madrid. El nombre de la calle es literal por este suceso del siglo XVI.
+
+---
+
+## 🎭 Estación 4: El Reposo del Ingenio
+**Ubicación:** Calle de Lope de Vega (Convento de las Trinitarias Descalzas).
+
+- **Texto Narrativo:** Los poetas de Madrid eran tan buenos con la espada como con la pluma. En este convento descansan los restos de un hombre que sobrevivió a batallas y cautiverios, pero no a la envidia de sus rivales.
+- **Instrucción de Observación:** Leed las placas en los muros exteriores del convento.
+- **El Acertijo:** "Buscad el nombre del hidalgo que aquí yace. Su apellido es la clave, pero cuidado: muchos lo buscan, pero pocos conocen su verdadera tumba."
+- **Solución:** CERVANTES.
+- **Mensaje de Éxito:** El autor ha firmado vuestro pasaporte a la última etapa. Solo los que entienden el teatro de la vida pueden resolver el final.
+- **Curiosidades:** Los restos de Miguel de Cervantes fueron hallados e identificados recientemente (en 2015) en la cripta de este convento.
+
+---
+
+## 🎭 Estación 5: El Escenario del Juicio Final
+**Ubicación:** Plaza de Santa Ana.
+
+- **Texto Narrativo:** Habéis llegado al corazón del teatro. Aquí las tragedias no solo eran de ficción. Frente a vosotros, un gran dramaturgo observa el horizonte.
+- **Instrucción de Observación:** Acercaos a la estatua de Calderón de la Barca.
+- **El Acertijo:** Mirad los bajorrelieves de la base de la estatua que representan sus obras. Buscad la que muestra una escena de honor y muerte. ¿Cuál es el sentimiento que guía al protagonista según la placa de bronce inferior? (Buscad una palabra que empiece por D).
+- **Solución:** DETERMINACIÓN.
+- **Mensaje de Éxito:** ¡MISTERIO RESUELTO! Habéis encontrado el manuscrito perdido del verdugo. Ahora, como ciudadanos libres, podéis disfrutar de las tabernas de la plaza. ¡La cena está servida!
+- **Curiosidades:** La Plaza de Santa Ana se construyó tras el derribo de un convento por orden de José Bonaparte (Pepe Botella), para dar aire y luz a la ciudad.
