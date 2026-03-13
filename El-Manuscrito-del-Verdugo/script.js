@@ -135,7 +135,7 @@ const Game = {
         document.getElementById('st-img').src = s.img;
         document.getElementById('st-narrative').textContent = s.narrative;
         document.getElementById('st-question').textContent = s.question;
-        document.getElementById('st-map').href = `https://www.google.com/maps/search/?api=1&query=${s.coords}`;
+        document.getElementById('st-map').href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.location + " Madrid")}`;
         document.getElementById('st-address').textContent = s.address;
         document.getElementById('ans-input').value = "";
         document.getElementById('feedback').textContent = "";

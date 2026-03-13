@@ -175,7 +175,7 @@ const Game = {
         const s = stations[this.currentStation];
         document.getElementById('station-title').textContent = s.title;
         document.getElementById('station-location').textContent = s.location;
-        document.getElementById('station-map').href = `https://www.google.com/maps/search/?api=1&query=${s.coords}`;
+        document.getElementById('station-map').href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.location + " Madrid")}`;
         document.getElementById('station-address').textContent = s.address;
         document.getElementById('station-img').src = s.img;
         document.getElementById('station-narrative').innerHTML = s.narrative.replace(/\n\n/g, '<br><br>');
