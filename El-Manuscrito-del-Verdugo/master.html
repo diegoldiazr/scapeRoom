@@ -2,40 +2,172 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Master | El Manuscrito del Verdugo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM | El Manuscrito del Verdugo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { background: #000; color: #ff4d4d; font-family: 'Cinzel', serif; padding: 20px; }
-        .box { border: 1px solid #8b0000; padding: 15px; margin-bottom: 20px; background: #0a0a0a; }
-        h2 { color: #d4af37; }
-        .ans { color: #fff; font-weight: bold; background: #8b0000; padding: 2px 5px; }
+        :root {
+            --primary: #d4af37;
+            --secondary: #200000;
+            --bg: #0a0a0a;
+            --text: #ffffff;
+            --accent: #ff4d4d;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 20px;
+        }
+
+        .master-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 30px;
+        }
+
+        h1 { font-family: 'Cinzel', serif; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+
+        .section {
+            background: #151515;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(255,0,0,0.05);
+            border: 1px solid #1a1a1a;
+        }
+
+        h2 { 
+            font-family: 'Cinzel', serif; 
+            color: var(--primary); 
+            font-size: 1.2rem; 
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #222;
+            font-size: 0.9rem;
+        }
+
+        th { background: #111; color: var(--primary); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+
+        .solution { font-weight: 700; color: #fff; background: var(--secondary); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent); }
+        .hint-text { opacity: 0.6; font-size: 0.85rem; font-style: italic; color: #ccc; }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn-main { background: var(--secondary); color: white; border: 1px solid var(--accent); }
+        .btn-back { background: var(--primary); color: black; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            th, td { padding: 8px; }
+        }
     </style>
 </head>
 <body>
-    <h1>Manual del Verdugo (GM)</h1>
-    <div class="box">
-        <h2>1. Cadalso (Provincia)</h2>
-        <p>Solución: <span class="ans">17</span></p>
-        <p>Pista: Siglo de construcción.</p>
+    <div class="master-container">
+        <header>
+            <h1>Manual del Verdugo (GM)</h1>
+            <p>Archivo de Sentencias y Claves del Madrid Negro</p>
+        </header>
+
+        <section class="section">
+            <h2>🔑 Registro de Cadalsos</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sentencia</th>
+                            <th>Solución</th>
+                            <th>Guía del Verdugo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Provincia</td>
+                            <td><span class="solution">17</span></td>
+                            <td class="hint-text">Buscad el siglo de construcción en la placa del edificio.</td>
+                        </tr>
+                        <tr>
+                            <td>2. Puerta Cerrada</td>
+                            <td><span class="solution">fuego</span></td>
+                            <td class="hint-text">Palabra faltante en el mural "Fui sobre agua edificada...".</td>
+                        </tr>
+                        <tr>
+                            <td>3. Calle Cabeza</td>
+                            <td><span class="solution">13</span></td>
+                            <td class="hint-text">Número del portal donde se encuentra el busto.</td>
+                        </tr>
+                        <tr>
+                            <td>4. Trinitarias</td>
+                            <td><span class="solution">cervantes</span></td>
+                            <td class="hint-text">Apellido del hidalgo que descansa en el convento.</td>
+                        </tr>
+                        <tr>
+                            <td>5. Pza. Santa Ana</td>
+                            <td><span class="solution">determinación</span></td>
+                            <td class="hint-text">Palabra que guía al honor bajo la estatua de Calderón.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="footer-nav">
+            <a href="../master-selection.html" class="btn btn-back">⬅ Volver al Panel GM</a>
+            <a href="index.html" class="btn btn-main">Ver Intro del Juego</a>
+        </div>
     </div>
-    <div class="box">
-        <h2>2. Llamas (Puerta Cerrada)</h2>
-        <p>Solución: <span class="ans">fuego</span></p>
-        <p>Pista: Frase del mural.</p>
-    </div>
-    <div class="box">
-        <h2>3. Criado (Calle Cabeza)</h2>
-        <p>Solución: <span class="ans">13</span></p>
-        <p>Pista: Número del portal del busto.</p>
-    </div>
-    <div class="box">
-        <h2>4. Reposo (Trinitarias)</h2>
-        <p>Solución: <span class="ans">cervantes</span></p>
-        <p>Pista: Es el autor del Quijote.</p>
-    </div>
-    <div class="box">
-        <h2>5. Juicio (Santa Ana)</h2>
-        <p>Solución: <span class="ans">determinación</span></p>
-        <p>Pista: Placa bronce bajo Calderón.</p>
-    </div>
+
+    <script>
+        if (sessionStorage.getItem('gm_access') !== 'granted') {
+            window.location.href = '../index.html';
+        }
+    </script>
 </body>
 </html>

@@ -3,68 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Panel | El Inquisidor Ciego</title>
+    <title>GM | El Inquisidor Ciego</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1a1a1a; color: #eee; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        h1 { color: #d4af37; text-align: center; border-bottom: 2px solid #8b0000; padding-bottom: 10px; }
-        .section { background: #2a2a2a; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #8b0000; }
-        h2 { color: #d4af37; margin-top: 0; }
-        .answer { font-weight: bold; color: #ff6b6b; }
-        .pista { font-style: italic; color: #aaa; margin: 5px 0; }
-        pre { background: #111; padding: 10px; border-radius: 4px; overflow-x: auto; color: #51cf66; }
+        :root {
+            --primary: #d4af37;
+            --secondary: #3d0000;
+            --bg: #1a1a1a;
+            --text: #eee;
+            --accent: #8b0000;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 20px;
+        }
+
+        .master-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 30px;
+        }
+
+        h1 { font-family: 'Cinzel', serif; color: var(--primary); text-transform: uppercase; }
+
+        .section {
+            background: #252525;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid #333;
+        }
+
+        h2 { 
+            font-family: 'Cinzel', serif; 
+            color: var(--primary); 
+            font-size: 1.2rem; 
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        th { background: #1a1a1a; color: var(--primary); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+
+        .solution { font-weight: 700; color: #ff6b6b; background: #3d0000; padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(255,107,107,0.2); }
+        .hint-text { opacity: 0.7; font-size: 0.85rem; font-style: italic; color: #aaa; }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn-main { background: var(--accent); color: white; }
+        .btn-back { background: var(--primary); color: black; }
+
+        pre { background: #000; padding: 10px; border-radius: 4px; overflow-x: auto; color: #51cf66; font-size: 0.8rem; border: 1px solid #333; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            th, td { padding: 8px; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Guía del Game Master: El Inquisidor Ciego</h1>
-        
-        <div class="section">
-            <h2>Estación 1: Plaza de la Cruz Verde</h2>
-            <p><strong>Ubicación:</strong> Centro de la plaza (Fuente).</p>
-            <p><strong>Pregunta:</strong> Año del último Auto de Fe.</p>
-            <p><strong>Respuesta:</strong> <span class="answer">1680</span></p>
-            <p class="pista">Pista 1: Mirar la placa de la fuente.</p>
-            <p class="pista">Pista 2: Es un año del siglo XVII.</p>
-        </div>
+    <div class="master-container">
+        <header>
+            <h1>Guía GM: El Inquisidor Ciego</h1>
+            <p>Manual de Invocación y Control para el Game Master</p>
+        </header>
 
-        <div class="section">
-            <h2>Estación 2: Palacio de Cañete</h2>
-            <p><strong>Ubicación:</strong> Calle Mayor, 69.</p>
-            <p><strong>Pregunta:</strong> Número de fieras rampantes.</p>
-            <p><strong>Respuesta:</strong> <span class="answer">2</span></p>
-            <p class="pista">Pista 1: Mirar el escudo sobre la puerta.</p>
-            <p class="pista">Pista 2: Contar los leones de piedra.</p>
-        </div>
+        <section class="section">
+            <h2>🔑 Archivo de Respuestas</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Lugar</th>
+                            <th>Solución</th>
+                            <th>Guía</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Cruz Verde</td>
+                            <td><span class="solution">1680</span></td>
+                            <td class="hint-text">Año del Auto de Fe en la placa de la fuente.</td>
+                        </tr>
+                        <tr>
+                            <td>2. Palacio Cañete</td>
+                            <td><span class="solution">2</span></td>
+                            <td class="hint-text">Leones de piedra en el escudo de la puerta.</td>
+                        </tr>
+                        <tr>
+                            <td>3. San Ginés</td>
+                            <td><span class="solution">3</span></td>
+                            <td class="hint-text">Puertas de madera en fachada C/ Arenal.</td>
+                        </tr>
+                        <tr>
+                            <td>4. Pza. de la Villa</td>
+                            <td><span class="solution">62</span></td>
+                            <td class="hint-text">Cálculo de fechas en pedestal de la estatua.</td>
+                        </tr>
+                        <tr>
+                            <td>5. Pza. Mayor</td>
+                            <td><span class="solution">Juan de Villanueva</span></td>
+                            <td class="hint-text">Apellido en placa de Arco Cuchilleros.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <div class="section">
-            <h2>Estación 3: San Ginés</h2>
-            <p><strong>Ubicación:</strong> Calle Arenal.</p>
-            <p><strong>Pregunta:</strong> Puertas menos estatuas.</p>
-            <p><strong>Respuesta:</strong> <span class="answer">3</span></p>
-            <p class="pista">Pista 1: Fachada calle Arenal (3 puertas).</p>
-            <p class="pista">Pista 2: En ese paño de pared no hay estatuas (0).</p>
-        </div>
-
-        <div class="section">
-            <h2>Estación 4: Plaza de la Villa</h2>
-            <p><strong>Pregunta:</strong> Años de vida de Álvaro de Bazán.</p>
-            <p><strong>Respuesta:</strong> <span class="answer">62</span></p>
-            <p class="pista">Pista: Muerte (1588) - Nacimiento (1526).</p>
-        </div>
-
-        <div class="section">
-            <h2>Estación 5: Plaza Mayor</h2>
-            <p><strong>Pregunta:</strong> Arquitecto reconstructor.</p>
-            <p><strong>Respuesta:</strong> <span class="answer">Juan de Villanueva</span></p>
-            <p class="pista">Pista: Placa en el Arco de Cuchilleros.</p>
-        </div>
-
-        <div class="section">
-            <h2>Comandos Rápidos</h2>
-            <p>Para saltar estaciones o depurar:</p>
+        <section class="section">
+            <h2>💻 Control Remoto</h2>
+            <p style="font-size: 0.8rem; margin-bottom: 10px;">Comando para saltar estaciones:</p>
             <pre>Game.currentStation = 2; Game.loadStation();</pre>
+        </section>
+
+        <div class="footer-nav">
+            <a href="../master-selection.html" class="btn btn-back">⬅ Volver al Panel GM</a>
+            <a href="index.html" class="btn btn-main">Ver Intro del Juego</a>
         </div>
     </div>
+
+    <script>
+        if (sessionStorage.getItem('gm_access') !== 'granted') {
+            window.location.href = '../index.html';
+        }
+    </script>
 </body>
 </html>

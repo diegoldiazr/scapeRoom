@@ -3,92 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual del Game Master | El Último Verso</title>
-    <link rel="stylesheet" href="style.css">
+    <title>GM | El Último Verso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { background: #fdf5e6; color: #333; }
-        .master-container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        .master-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 2px solid var(--secondary-color); margin-bottom: 30px; }
-        h1, h2 { color: var(--secondary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; text-align: left; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background: #eee; }
-        .solution { font-weight: bold; color: var(--secondary-color); }
-        .hint-text { font-size: 0.9rem; color: #666; font-style: italic; }
+        :root {
+            --primary: #d4af37;
+            --secondary: #8b0000;
+            --bg: #fdf5e6;
+            --text: #1a1a1a;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 20px;
+        }
+
+        .master-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--secondary);
+            margin-bottom: 30px;
+        }
+
+        h1 { font-family: 'Cinzel', serif; color: var(--secondary); text-transform: uppercase; }
+
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e0d5c0;
+        }
+
+        h2 { 
+            font-family: 'Cinzel', serif; 
+            color: var(--secondary); 
+            font-size: 1.2rem; 
+            margin-bottom: 15px;
+            border-left: 4px solid var(--secondary);
+            padding-left: 10px;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        th { background: #f9f9f9; color: var(--secondary); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+
+        .solution { font-weight: 700; color: #d00000; background: #fff0f0; padding: 2px 6px; border-radius: 4px; }
+        .hint-text { opacity: 0.7; font-size: 0.85rem; font-style: italic; }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn-main { background: var(--secondary); color: white; }
+        .btn-back { background: var(--primary); color: black; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .section { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+            th, td { padding: 8px; }
+        }
     </style>
 </head>
 <body>
     <div class="master-container">
-        <h1>📖 Manual del Game Master</h1>
-        
-        <div class="master-card">
-            <h2>Resumen de Pruebas y Soluciones</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Estación</th>
-                        <th>Ubicación</th>
-                        <th>Solución</th>
-                        <th>Pistas clave</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1. El Custodio</td>
-                        <td>Plaza de la Provincia</td>
-                        <td class="solution">2</td>
-                        <td class="hint-text">No contar ángeles. Mirar base del relieve.</td>
-                    </tr>
-                    <tr>
-                        <td>2. El Suelo</td>
-                        <td>C/ Huertas</td>
-                        <td class="solution">Dinero</td>
-                        <td class="hint-text">Letras doradas en el suelo (Quevedo).</td>
-                    </tr>
-                    <tr>
-                        <td>3. La Casa</td>
-                        <td>C/ Cervantes 11</td>
-                        <td class="solution">1610</td>
-                        <td class="hint-text">Al final de la inscripción en latín (dintel).</td>
-                    </tr>
-                    <tr>
-                        <td>4. El Guardián</td>
-                        <td>Pza. de las Cortes</td>
-                        <td class="solution">4</td>
-                        <td class="hint-text">Relieve de bronce lateral (Molino).</td>
-                    </tr>
-                    <tr>
-                        <td>5. El Final</td>
-                        <td>Pza. Santa Ana</td>
-                        <td class="solution">5</td>
-                        <td class="hint-text">Bajorrelieve "El Alcalde de Zalamea".</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <header>
+            <h1>Guía: El Último Verso</h1>
+            <p>Panel de Control del Game Master</p>
+        </header>
 
-        <div class="master-card">
-            <h2>Logística y Ambientación</h2>
-            <div style="line-height: 1.8;">
-                <h3>Protocolo de Pistas</h3>
-                <ul>
-                    <li><strong>Nivel 1 (Sugerencia):</strong> "Leed el texto del formulario otra vez. La respuesta suele estar en la última frase".</li>
-                    <li><strong>Nivel 2 (Dirección):</strong> "No miréis hacia arriba, la respuesta está a vuestros pies".</li>
-                    <li><strong>Nivel 3 (Salto):</strong> Revelar la respuesta si el equipo está frustrado para no romper el ritmo.</li>
-                </ul>
-                
-                <h3 style="margin-top: 20px;">Checklist antes de empezar</h3>
-                <ul>
-                    <li>Batería al 100% (recomendar PowerBank).</li>
-                    <li>Revisar si hay obras o andamios tapando algún punto.</li>
-                    <li>Establecer un punto de encuentro final en Plaza de Santa Ana.</li>
-                </ul>
+        <section class="section">
+            <h2>🔑 Soluciones y Pistas</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estación</th>
+                            <th>Solución</th>
+                            <th>Pista Maestra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Provincia</td>
+                            <td><span class="solution">2</span></td>
+                            <td class="hint-text">No contar ángeles. Mirar base del relieve.</td>
+                        </tr>
+                        <tr>
+                            <td>2. Letras Suelo</td>
+                            <td><span class="solution">Dinero</span></td>
+                            <td class="hint-text">Letras doradas en el suelo (Quevedo).</td>
+                        </tr>
+                        <tr>
+                            <td>3. C/ Cervantes 11</td>
+                            <td><span class="solution">1610</span></td>
+                            <td class="hint-text">Final de la inscripción en latín.</td>
+                        </tr>
+                        <tr>
+                            <td>4. Pza. Cortes</td>
+                            <td><span class="solution">4</span></td>
+                            <td class="hint-text">Relieve de bronce lateral (Molino).</td>
+                        </tr>
+                        <tr>
+                            <td>5. Pza. Santa Ana</td>
+                            <td><span class="solution">5</span></td>
+                            <td class="hint-text">Bajorrelieve "El Alcalde de Zalamea".</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
+        </section>
 
-        <div style="text-align: center;">
-            <a href="index.html" class="btn btn-primary" style="display: inline-block; width: auto; padding: 10px 30px;">Volver al Juego</a>
+        <section class="section">
+            <h2>📜 Consejos de Apoyo</h2>
+            <ul style="padding-left: 20px; font-size: 0.9rem; line-height: 1.8;">
+                <li><strong>Bloqueo:</strong> Sugerir que lean el texto del formulario; la clave suele estar al final.</li>
+                <li><strong>Localización:</strong> Si no ven algo, pedir que miren al suelo o a los laterales, nunca hacia arriba.</li>
+                <li><strong>Meta:</strong> El final es en Plaza de Santa Ana, ideal para el cierre.</li>
+            </ul>
+        </section>
+
+        <div class="footer-nav">
+            <a href="../master-selection.html" class="btn btn-back">⬅ Volver al Panel GM</a>
+            <a href="index.html" class="btn btn-main">Ver Intro del Juego</a>
         </div>
     </div>
+
+    <script>
+        if (sessionStorage.getItem('gm_access') !== 'granted') {
+            window.location.href = '../index.html';
+        }
+    </script>
 </body>
 </html>
