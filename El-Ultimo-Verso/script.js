@@ -202,8 +202,9 @@ const Game = {
     },
 
     checkAnswer: function() {
-        const userInput = document.getElementById('user-answer').value.trim().toLowerCase();
-        const correctAnswer = stations[this.currentStation].answer.toLowerCase();
+        const normalize = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const userInput = normalize(document.getElementById('user-answer').value.trim());
+        const correctAnswer = normalize(stations[this.currentStation].answer);
         const feedback = document.getElementById('feedback');
 
         if (userInput === correctAnswer) {
@@ -242,6 +243,7 @@ const Game = {
     },
 
     showSuccess: function() {
+        this.playAchievementSound();
         document.getElementById('success-msg').textContent = stations[this.currentStation].successMsg;
         this.showScreen('screen-success');
         
@@ -262,6 +264,7 @@ const Game = {
 
     finishGame: function() {
         clearInterval(this.timerInterval);
+        this.playAchievementSound(true);
         const timeTaken = this.formatTimeElapsed();
         
         const finalMsg = `
@@ -279,6 +282,31 @@ const Game = {
         `;
         document.getElementById('final-text-container').innerHTML = finalMsg;
         this.showScreen('screen-final');
+    },
+
+    playAchievementSound: function(isFinal = false) {
+        try {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            const ctx = new AudioContext();
+            const playNote = (freq, start, duration) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, start);
+                gain.gain.setValueAtTime(0.1, start);
+                gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(start);
+                osc.stop(start + duration);
+            };
+            const now = ctx.currentTime;
+            if (isFinal) {
+                [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50].forEach((f, i) => playNote(f, now + i*0.15, 1.2));
+            } else {
+                [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => playNote(f, now + i*0.1, 0.5));
+            }
+        } catch(e) { console.error("Audio error", e); }
     },
 
     showScreen: function(screenId) {

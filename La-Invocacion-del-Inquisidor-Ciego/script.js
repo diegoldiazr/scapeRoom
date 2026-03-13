@@ -196,8 +196,9 @@ const Game = {
     },
 
     checkAnswer: function() {
-        const userInput = document.getElementById('user-answer').value.trim().toLowerCase();
-        const correctAnswer = stations[this.currentStation].answer.toLowerCase();
+        const normalize = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const userInput = normalize(document.getElementById('user-answer').value.trim());
+        const correctAnswer = normalize(stations[this.currentStation].answer);
         const feedback = document.getElementById('feedback');
 
         if (userInput === correctAnswer) {
@@ -235,6 +236,7 @@ const Game = {
     },
 
     showSuccess: function() {
+        this.playAchievementSound();
         document.getElementById('success-msg').textContent = stations[this.currentStation].successMsg;
         this.showScreen('screen-success');
         
@@ -254,21 +256,47 @@ const Game = {
 
     finishGame: function() {
         clearInterval(this.timerInterval);
+        this.playAchievementSound(true);
         const timeTaken = this.formatTimeElapsed();
         
         const finalMsg = `
-            <p><strong>¡EL PORTAL HA SIDO SELLADO!</strong></p>
+            <p><strong>¡EL PORTAL HA SIDO SELLADO DEFINITIVAMENTE!</strong></p>
             <p style="color: var(--primary); font-weight: bold; font-size: 1.1rem; border: 1px solid var(--gold); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
                 Tiempo de purificación: ${timeTaken}
             </p>
-            <p>La sombra del Inquisidor Ciego se desvanece entre las piedras del Arco de Cuchilleros. Vuestro valor ha evitado que Madrid caiga en un bucle de terror del siglo XVII.</p>
-            <p>Habéis descifrado crímenes olvidados y leyendas que han dormido durante siglos bajo los adoquines del Madrid de los Austrias. Ya no sois simples caminantes; sois los Guardianes del Sello.</p>
-            <p style="color: var(--primary); font-weight: bold;">CIUDAD SEGURA. MISIÓN CUMPLIDA.</p>
-            <p><strong>Vuestra recompensa:</strong> La Sociedad del Lirio os concede el Indulto de la Villa. Bajad las escaleras hacia las tabernas centenarias. El vino de hoy sabe mejor que el de ayer.</p>
-            <p><strong>ORDEN FINAL:</strong> Disfrutad de la Plaza Mayor. Mirad sus balcones con otros ojos. La historia no se lee, se vive.</p>
+            <p>La sombra del Inquisidor Ciego se desvanece entre las piedras del Arco de Cuchilleros, lanzando un último lamento que solo vosotros podéis oír. Madrid se libera de una maldición que ha dormido durante siglos bajo los adoquines de los Austrias.</p>
+            <p>Habéis descifrado crímenes olvidados y rituales oscuros, demostrando que la luz del ingenio siempre vence a las sombras del fanatismo. Ya no sois simples caminantes; sois los <strong>Custodios de la Villa</strong>.</p>
+            <p style="color: var(--primary); font-weight: bold; letter-spacing: 2px;">CIUDAD PURIFICADA. MISIÓN CUMPLIDA.</p>
+            <p><strong>Vuestra recompensa:</strong> El Santo Oficio ha sido desterrado. Disfrutad de la libertad ganada. Bajad las escaleras hacia las tabernas centenarias; hoy brindáis con los fantasmas del pasado.</p>
+            <p style="text-align: center; font-family: var(--font-heading); font-size: 1.2rem; margin-top: 20px;">El Sello está cerrado. Que la historia os juzgue como héroes.</p>
         `;
         document.getElementById('final-text-container').innerHTML = finalMsg;
         this.showScreen('screen-final');
+    },
+
+    playAchievementSound: function(isFinal = false) {
+        try {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            const ctx = new AudioContext();
+            const playNote = (freq, start, duration) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, start);
+                gain.gain.setValueAtTime(0.1, start);
+                gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(start);
+                osc.stop(start + duration);
+            };
+            const now = ctx.currentTime;
+            if (isFinal) {
+                [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50].forEach((f, i) => playNote(f, now + i*0.15, 1.2));
+            } else {
+                [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => playNote(f, now + i*0.1, 0.5));
+            }
+        } catch(e) { console.error("Audio error", e); }
     },
 
     showScreen: function(screenId) {

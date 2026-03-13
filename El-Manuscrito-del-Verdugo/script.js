@@ -148,8 +148,9 @@ const Game = {
     },
 
     check: function() {
-        const val = document.getElementById('ans-input').value.trim().toLowerCase();
-        const correct = stations[this.currentStation].answer.toLowerCase();
+        const normalize = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const val = normalize(document.getElementById('ans-input').value.trim());
+        const correct = normalize(stations[this.currentStation].answer);
         const f = document.getElementById('feedback');
         
         if (val === correct) {
@@ -180,6 +181,7 @@ const Game = {
     },
 
     showSuccess: function() {
+        this.playAchievementSound();
         document.getElementById('succ-msg').textContent = stations[this.currentStation].successMsg;
         this.showScreen('screen-success');
         const prg = ((this.currentStation + 1) / stations.length) * 100;
@@ -198,11 +200,50 @@ const Game = {
 
     finish: function() {
         clearInterval(this.timerInterval);
+        this.playAchievementSound(true);
         const total = (90 * 60) - this.secondsRemaining;
         const m = Math.floor(total / 60);
         const s = total % 60;
-        document.getElementById('final-time').textContent = `${m}m ${s}s`;
+        
+        const epicFinal = `
+            <p style="font-size: 1.2rem; line-height: 1.8;"><strong>¡EL JUICIO HA CONCLUIDO!</strong></p>
+            <p>Habeis caminado por la fina línea que separa la justicia de la venganza. Las sombras de la Cárcel de Corte y los ecos de la Calle de la Cabeza han sido vuestros testigos. Con la <strong>${stations[4].answer.toUpperCase()}</strong> grabada en vuestra alma, habéis recuperado el Manuscrito del Verdugo antes de que el hacha cayera sobre la verdad.</p>
+            <p>Madrid respira tranquila, sus secretos más oscuros vuelven a dormir bajo los adoquines del Barrio de las Letras gracias a vuestro ingenio implacable.</p>
+            <p style="color: var(--primary); font-weight: 900; letter-spacing: 2px; margin: 20px 0;"> HONOR RESTAURADO. CASO CERRADO. </p>
+        `;
+        
+        const textContainer = document.querySelector('#screen-final .parchment p');
+        if (textContainer) textContainer.parentElement.innerHTML = epicFinal + `<p style="font-size: 1.5rem; text-align: center; margin: 20px 0; color: var(--primary);">TIEMPO: <span id="final-time">${m}m ${s}s</span></p>`;
+        
         this.showScreen('screen-final');
+    },
+
+    playAchievementSound: function(isFinal = false) {
+        try {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            const ctx = new AudioContext();
+            const playNote = (freq, start, duration) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, start);
+                gain.gain.setValueAtTime(0.1, start);
+                gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(start);
+                osc.stop(start + duration);
+            };
+            
+            const now = ctx.currentTime;
+            if (isFinal) {
+                // Epic final flourish
+                [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50].forEach((f, i) => playNote(f, now + i*0.15, 1.2));
+            } else {
+                // Achievement chime
+                [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => playNote(f, now + i*0.1, 0.5));
+            }
+        } catch(e) { console.error("Audio error", e); }
     },
 
     showScreen: function(id) {
