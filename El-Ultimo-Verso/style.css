@@ -80,6 +80,14 @@ h1, h2 {
     letter-spacing: 1px;
 }
 
+#station-location {
+    font-size: 0.9rem;
+    color: #5d5246;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
 .st-address {
     font-size: 0.8rem;
     color: var(--primary);

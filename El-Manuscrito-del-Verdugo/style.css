@@ -70,6 +70,14 @@ h1, h2 {
     text-transform: uppercase;
 }
 
+#st-location {
+    font-size: 0.8rem;
+    color: #777;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
 .st-address {
     color: #666;
     font-size: 0.75rem;

@@ -1,7 +1,7 @@
 const stations = [
     {
         title: "Estación 1: La Sombra del Cadalso",
-        location: "Plaza de la Provincia",
+        location: "Plaza de la Provincia (Cárcel de Corte)",
         coords: "40.4144,-3.7052",
         address: "Plaza de la Provincia, 1 (Palacio de Santa Cruz)",
         img: "../El-Ultimo-Verso/palacio_santa_cruz_madrid_1773341559525.png",
@@ -58,7 +58,7 @@ const stations = [
     },
     {
         title: "Estación 4: El Reposo del Ingenio",
-        location: "Convento de las Trinitarias",
+        location: "Convento de las Trinitarias (Barrio de las Letras)",
         coords: "40.4137,-3.6974",
         address: "Calle de Lope de Vega, 18 (Convento de las Trinitarias)",
         img: "../El-Ultimo-Verso/casa_lope_de_vega_madrid_1773341937858.png",
@@ -77,7 +77,7 @@ const stations = [
     },
     {
         title: "Estación 5: El Escenario del Juicio Final",
-        location: "Plaza de Santa Ana",
+        location: "Plaza de Santa Ana (Final)",
         coords: "40.4147,-3.7008",
         address: "Plaza de Santa Ana (Estatua de Calderón)",
         img: "../El-Ultimo-Verso/estatua_calderon_madrid_1773342386443.png",
@@ -131,6 +131,7 @@ const Game = {
     loadStation: function() {
         const s = stations[this.currentStation];
         document.getElementById('st-title').textContent = s.title;
+        document.getElementById('st-location').textContent = s.location;
         document.getElementById('st-img').src = s.img;
         document.getElementById('st-narrative').textContent = s.narrative;
         document.getElementById('st-question').textContent = s.question;

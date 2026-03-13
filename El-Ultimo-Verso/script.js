@@ -1,7 +1,7 @@
 const stations = [
     {
         title: "Estación 1: El Custodio",
-        location: "Palacio de Santa Cruz (Plaza de la Provincia)",
+        location: "Palacio de Santa Cruz",
         coords: "40.4144,-3.7052",
         address: "Plaza de la Provincia, 1 (Palacio de Santa Cruz)",
         img: "palacio_santa_cruz_madrid_1773341559525.png",
@@ -46,7 +46,7 @@ const stations = [
     },
     {
         title: "Estación 3: La Casa del Enemigo",
-        location: "Calle de Cervantes, 11 (Casa Lope de Vega)",
+        location: "Casa de Lope de Vega",
         coords: "40.4143,-3.6975",
         address: "Calle de Cervantes, 11 (Casa Museo Lope de Vega)",
         img: "casa_lope_de_vega_madrid_1773341937858.png",
@@ -68,7 +68,7 @@ const stations = [
     },
     {
         title: "Estación 4: El Guardián de Bronce",
-        location: "Plaza de las Cortes (Estatua de Cervantes)",
+        location: "Estatua de Cervantes",
         coords: "40.4161,-3.6963",
         address: "Plaza de las Cortes (Estatua de Cervantes)",
         img: "estatua_cervantes_madrid_1773342370580.png",
@@ -90,7 +90,7 @@ const stations = [
     },
     {
         title: "Estación 5: El Descubrimiento Final",
-        location: "Plaza de Santa Ana (Calderón de la Barca)",
+        location: "Plaza de Santa Ana (Calderón)",
         coords: "40.4147,-3.7008",
         address: "Plaza de Santa Ana (Estatua de Calderón de la Barca)",
         img: "estatua_calderon_madrid_1773342386443.png",
@@ -180,6 +180,7 @@ const Game = {
     loadStation: function() {
         const s = stations[this.currentStation];
         document.getElementById('station-title').textContent = s.title;
+        document.getElementById('station-location').textContent = s.location;
         document.getElementById('station-map').href = `https://www.google.com/maps/search/?api=1&query=${s.coords}`;
         document.getElementById('station-address').textContent = s.address;
         document.getElementById('station-img').src = s.img;

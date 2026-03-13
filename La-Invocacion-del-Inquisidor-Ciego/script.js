@@ -1,7 +1,7 @@
 const stations = [
     {
         title: "Estación 1: El Quemadero de la Cruz Verde",
-        location: "Plaza de la Cruz Verde",
+        location: "La Plaza de la Cruz Verde",
         coords: "40.4132,-3.7119",
         address: "Plaza de la Cruz Verde (Fuente)",
         img: "plza_cruz_verde_inquisicion_madrid_1773398712007.png",
@@ -22,7 +22,7 @@ const stations = [
     },
     {
         title: "Estación 2: El Palacio de las Sombras",
-        location: "Palacio de Cañete (Calle Mayor, 69)",
+        location: "El Palacio de Cañete (C. Mayor)",
         coords: "40.4150,-3.7111",
         address: "Calle Mayor, 69 (Palacio de Cañete)",
         img: "palacio_canete_madrid_misterio_1773398726455.png",
@@ -43,7 +43,7 @@ const stations = [
     },
     {
         title: "Estación 3: El Decapitado de San Ginés",
-        location: "Iglesia de San Ginés (Calle del Arenal)",
+        location: "Iglesia de San Ginés",
         coords: "40.4168,-3.7067",
         address: "Calle del Arenal, 13 (Iglesia de San Ginés)",
         img: "palacio_santa_cruz_madrid_1773341559525.png", // Usando palacio como placeholder oscuro
@@ -85,7 +85,7 @@ const stations = [
     },
     {
         title: "Estación 5: El Gran Auto de Fe",
-        location: "Plaza Mayor (Arco de Cuchilleros)",
+        location: "Plaza Mayor (El Final)",
         coords: "40.4150,-3.7075",
         address: "Plaza Mayor (Arco de Cuchilleros)",
         img: "estatua_calderon_madrid_1773342386443.png", // Usando estatua como placeholder final
@@ -174,6 +174,7 @@ const Game = {
     loadStation: function() {
         const s = stations[this.currentStation];
         document.getElementById('station-title').textContent = s.title;
+        document.getElementById('station-location').textContent = s.location;
         document.getElementById('station-map').href = `https://www.google.com/maps/search/?api=1&query=${s.coords}`;
         document.getElementById('station-address').textContent = s.address;
         document.getElementById('station-img').src = s.img;
