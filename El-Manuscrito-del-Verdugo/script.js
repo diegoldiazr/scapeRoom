@@ -42,7 +42,7 @@ const stations = [
         location: "Calle de la Cabeza",
         coords: "40.4116,-3.7032",
         address: "Calle de la Cabeza, 13 (Portal del Busto)",
-        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Calle_de_la_Cabeza_(Madrid)_01.jpg",
+        img: "https://edificiosmadridblog.wordpress.com/wp-content/uploads/2020/02/fachada.png",
         narrative: "Un criado asesinó a su amo y huyó. Al regresar años después con la cabeza oculta, un milagro reveló su crimen ante la guardia.",
         question: "¿En qué número de portal se encuentra el busto que recuerda al decapitado?",
         answer: "13",
