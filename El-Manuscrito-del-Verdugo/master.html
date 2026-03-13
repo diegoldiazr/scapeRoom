@@ -4,54 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GM | El Manuscrito del Verdugo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #d4af37;
-            --secondary: #200000;
-            --bg: #0a0a0a;
-            --text: #ffffff;
-            --accent: #ff4d4d;
+            --primary: #8b0000;
+            --bg: #ffffff;
+            --text: #000000;
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
 
         body {
             font-family: 'Quicksand', sans-serif;
-            background-color: var(--bg);
+            background-color: #fdfdfd;
             color: var(--text);
-            padding: 20px;
+            padding: 15px;
         }
 
         .master-container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid var(--accent);
-            margin-bottom: 30px;
+            padding: 25px 0;
+            border-bottom: 4px solid var(--primary);
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 8px;
         }
 
-        h1 { font-family: 'Cinzel', serif; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+        h1 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.5rem; text-transform: uppercase; }
 
         .section {
-            background: #151515;
-            padding: 25px;
+            background: white;
+            padding: 20px;
             border-radius: 8px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(255,0,0,0.05);
-            border: 1px solid #1a1a1a;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
         }
 
         h2 { 
             font-family: 'Cinzel', serif; 
             color: var(--primary); 
-            font-size: 1.2rem; 
-            margin-bottom: 15px;
-            border-left: 4px solid var(--accent);
+            font-size: 1.1rem; 
+            margin-bottom: 10px;
+            border-left: 5px solid var(--primary);
             padding-left: 10px;
         }
 
@@ -63,57 +63,48 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 500px;
+            min-width: 450px;
         }
 
         th, td {
             text-align: left;
             padding: 12px;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid #efefef;
             font-size: 0.9rem;
         }
 
-        th { background: #111; color: var(--primary); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+        th { background: #fcfcfc; color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
 
-        .solution { font-weight: 700; color: #fff; background: var(--secondary); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent); }
-        .hint-text { opacity: 0.6; font-size: 0.85rem; font-style: italic; color: #ccc; }
+        .solution { font-weight: 800; color: #fff; background: var(--primary); padding: 3px 8px; border-radius: 4px; }
+        .hint-text { color: #666; font-size: 0.85rem; font-style: italic; }
 
         .footer-nav {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 40px;
+            margin-top: 30px;
             padding-bottom: 40px;
-            flex-wrap: wrap;
         }
 
         .btn {
-            padding: 12px 25px;
+            padding: 12px 20px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
+            border-radius: 6px;
+            font-weight: 700;
             text-transform: uppercase;
             font-size: 0.8rem;
-            letter-spacing: 1px;
-            transition: all 0.3s;
+            text-align: center;
         }
 
-        .btn-main { background: var(--secondary); color: white; border: 1px solid var(--accent); }
-        .btn-back { background: var(--primary); color: black; }
-
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            .section { padding: 15px; }
-            h1 { font-size: 1.5rem; }
-            th, td { padding: 8px; }
-        }
+        .btn-main { background: var(--primary); color: white; }
+        .btn-back { background: #1a1a1a; color: white; }
     </style>
 </head>
 <body>
     <div class="master-container">
         <header>
-            <h1>Manual del Verdugo (GM)</h1>
-            <p>Archivo de Sentencias y Claves del Madrid Negro</p>
+            <h1>GM: Manuscrito del Verdugo</h1>
+            <p style="font-weight: 700; color: #444;">Registro de Sentencias y Claves</p>
         </header>
 
         <section class="section">
@@ -131,27 +122,27 @@
                         <tr>
                             <td>1. Provincia</td>
                             <td><span class="solution">17</span></td>
-                            <td class="hint-text">Buscad el siglo de construcción en la placa del edificio.</td>
+                            <td class="hint-text">Siglo de construcción en la placa del edificio.</td>
                         </tr>
                         <tr>
                             <td>2. Puerta Cerrada</td>
                             <td><span class="solution">fuego</span></td>
-                            <td class="hint-text">Palabra faltante en el mural "Fui sobre agua edificada...".</td>
+                            <td class="hint-text">Palabra faltante en el mural del origen.</td>
                         </tr>
                         <tr>
                             <td>3. Calle Cabeza</td>
                             <td><span class="solution">13</span></td>
-                            <td class="hint-text">Número del portal donde se encuentra el busto.</td>
+                            <td class="hint-text">Número del portal donde está el busto.</td>
                         </tr>
                         <tr>
                             <td>4. Trinitarias</td>
                             <td><span class="solution">cervantes</span></td>
-                            <td class="hint-text">Apellido del hidalgo que descansa en el convento.</td>
+                            <td class="hint-text">Apellido del hidalgo en el convento.</td>
                         </tr>
                         <tr>
                             <td>5. Pza. Santa Ana</td>
                             <td><span class="solution">determinación</span></td>
-                            <td class="hint-text">Palabra que guía al honor bajo la estatua de Calderón.</td>
+                            <td class="hint-text">Palabra bajo Calderón (Relieve Honor).</td>
                         </tr>
                     </tbody>
                 </table>
@@ -159,8 +150,8 @@
         </section>
 
         <div class="footer-nav">
-            <a href="../master-selection.html" class="btn btn-back">⬅ Volver al Panel GM</a>
-            <a href="index.html" class="btn btn-main">Ver Intro del Juego</a>
+            <a href="../master-selection.html" class="btn btn-back">⬅ Volver Panel GM</a>
+            <a href="index.html" class="btn btn-main">Ver Intro Juego</a>
         </div>
     </div>
 

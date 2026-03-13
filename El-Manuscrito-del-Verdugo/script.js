@@ -3,6 +3,7 @@ const stations = [
         title: "Estación 1: La Sombra del Cadalso",
         location: "Plaza de la Provincia",
         coords: "40.4144,-3.7052",
+        address: "Plaza de la Provincia, 1 (Palacio de Santa Cruz)",
         img: "../El-Ultimo-Verso/palacio_santa_cruz_madrid_1773341559525.png",
         narrative: "Bienvenidos, investigadores. Este edificio no siempre fue un palacio de diplomacia; fue la temida Cárcel de Corte. Aquí, los reos esperaban su ejecución mientras el verdugo afilaba su hacha. Se dice que uno de ellos dejó un mensaje cifrado antes de subir al patíbulo.",
         question: "¿En qué siglo se terminó de construir este lugar? (Escribe el número)",
@@ -21,6 +22,7 @@ const stations = [
         title: "Estación 2: El Mural de las Llamas",
         location: "Plaza de Puerta Cerrada",
         coords: "40.4132,-3.7093",
+        address: "Plaza de Puerta Cerrada (Frente al mural)",
         img: "../La-Invocacion-del-Inquisidor-Ciego/plza_cruz_verde_inquisicion_madrid_1773398712007.png",
         narrative: "Esta plaza debe su nombre a una de las puertas de la muralla que siempre estaba cerrada por la inseguridad. En sus muros hay un mensaje sobre el origen de Madrid.",
         question: "Completa la frase: 'Fui sobre agua edificada, mis muros de _________ son'.",
@@ -39,6 +41,7 @@ const stations = [
         title: "Estación 3: El Crimen del Criado",
         location: "Calle de la Cabeza",
         coords: "40.4116,-3.7032",
+        address: "Calle de la Cabeza, 13 (Portal del Busto)",
         img: "../La-Invocacion-del-Inquisidor-Ciego/palacio_canete_madrid_misterio_1773398726455.png",
         narrative: "Un criado asesinó a su amo y huyó. Al regresar años después con la cabeza oculta, un milagro reveló su crimen ante la guardia.",
         question: "¿En qué número de portal se encuentra el busto que recuerda al decapitado?",
@@ -57,6 +60,7 @@ const stations = [
         title: "Estación 4: El Reposo del Ingenio",
         location: "Convento de las Trinitarias",
         coords: "40.4137,-3.6974",
+        address: "Calle de Lope de Vega, 18 (Convento de las Trinitarias)",
         img: "../El-Ultimo-Verso/casa_lope_de_vega_madrid_1773341937858.png",
         narrative: "En este convento descansan los restos de un hombre que sobrevivió a mil batallas, pero no a la envidia. Su pluma fue su mejor defensa.",
         question: "Buscad el nombre del hidalgo que aquí yace. ¿Cuál es su apellido?",
@@ -75,6 +79,7 @@ const stations = [
         title: "Estación 5: El Escenario del Juicio Final",
         location: "Plaza de Santa Ana",
         coords: "40.4147,-3.7008",
+        address: "Plaza de Santa Ana (Estatua de Calderón)",
         img: "../El-Ultimo-Verso/estatua_calderon_madrid_1773342386443.png",
         narrative: "Habéis llegado al corazón del teatro. Frente a vosotros, el gran dramaturgo observa el horizonte. El juicio final está cerca.",
         question: "¿Cuál es el sentimiento que guía al protagonista según la placa de bronce inferior? (Empieza por D)",
@@ -130,6 +135,7 @@ const Game = {
         document.getElementById('st-narrative').textContent = s.narrative;
         document.getElementById('st-question').textContent = s.question;
         document.getElementById('st-map').href = `https://www.google.com/maps/search/?api=1&query=${s.coords}`;
+        document.getElementById('st-address').textContent = s.address;
         document.getElementById('ans-input').value = "";
         document.getElementById('feedback').textContent = "";
         document.getElementById('hint-1').style.display = "none";

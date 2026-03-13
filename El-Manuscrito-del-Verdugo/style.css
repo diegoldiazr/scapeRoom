@@ -1,116 +1,76 @@
 :root {
-    --primary-color: #8b0000; /* Blood Red */
-    --secondary-color: #1a1a1a; /* Charcoal */
-    --accent-color: #d4af37; /* Gold */
-    --bg-dark: #050505;
-    --paper-bg: #e8e2d0; /* Stained Parchment */
-    --text-dark: #1a1a1a;
-    --text-light: #cfcfcf;
+    --primary-color: #8b0000;
+    --accent: #ff4d4d;
+    --gold: #d4af37;
+    --bg: #ffffff;
+    --text: #000000;
     --font-heading: 'Cinzel', serif;
     --font-body: 'Quicksand', sans-serif;
-    --transition-speed: 0.4s;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;600&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@400;600;700&display=swap');
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: #f2f2f2;
+    color: var(--text);
     font-family: var(--font-body);
-    line-height: 1.6;
-    overflow-x: hidden;
-    min-height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://www.transparenttextures.com/patterns/dark-leather.png');
+    margin: 0;
+    padding: 0;
 }
 
 .app-container {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
-    min-height: 100vh;
+    padding: 15px;
 }
 
-.screen {
-    display: none;
-    animation: bloodFade var(--transition-speed) ease-in;
-}
-
-.screen.active {
-    display: block;
-}
-
-@keyframes bloodFade {
-    from { opacity: 0; filter: saturate(0) contrast(2); }
-    to { opacity: 1; filter: saturate(1) contrast(1); }
-}
+.screen { display: none; }
+.screen.active { display: block; }
 
 h1, h2, h3 {
     font-family: var(--font-heading);
     color: var(--primary-color);
     text-align: center;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .card {
-    background: rgba(15, 15, 15, 0.95);
-    border: 2px solid var(--primary-color);
-    padding: 2rem;
-    border-radius: 4px;
-    box-shadow: 0 0 40px rgba(139, 0, 0, 0.3);
-    position: relative;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: -5px; left: -5px; right: -5px; bottom: -5px;
-    border: 1px solid rgba(139, 0, 0, 0.2);
-    pointer-events: none;
+    background: white;
+    border: 3px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
 .parchment {
-    background: var(--paper-bg);
-    color: var(--text-dark);
-    padding: 1.5rem;
-    border-radius: 2px;
-    position: relative;
-    box-shadow: inset 0 0 50px rgba(0,0,0,0.2), 5px 5px 15px rgba(0,0,0,0.5);
-    transform: rotate(-1deg);
-    border: 1px solid #c4b99a;
+    background: #fff8eb;
+    color: #111;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+    margin: 15px 0;
+    font-size: 1.05rem;
 }
 
 .location-img {
     width: 100%;
-    height: 250px;
+    height: 180px;
     object-fit: cover;
-    border: 1px solid var(--primary-color);
-    margin-bottom: 20px;
-    filter: grayscale(0.5) contrast(1.2) sepia(0.2);
+    border-radius: 8px;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 15px;
 }
 
 .btn {
     display: block;
     width: 100%;
-    padding: 1rem;
-    margin-top: 1rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 2px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: var(--font-heading);
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .btn-primary {
@@ -118,74 +78,62 @@ h1, h2, h3 {
     color: white;
 }
 
-.btn-primary:hover {
-    background: #660000;
-    box-shadow: 0 0 20px rgba(139,0,0,0.6);
-}
-
 .btn-secondary {
-    background: transparent;
+    background: white;
+    border: 2px solid var(--primary-color);
     color: var(--primary-color);
 }
 
-.btn-secondary:hover {
-    background: rgba(139, 0, 0, 0.1);
-}
-
 .btn-map {
-    background: #111;
-    color: #888;
+    background: #000;
+    color: white;
     text-decoration: none;
-    text-align: center;
-    padding: 10px;
-    display: block;
-    margin-bottom: 15px;
-    font-size: 0.8rem;
-    border: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 1rem;
-    background: #000;
-    border: 1px solid var(--primary-color);
-    color: #ff4d4d;
-    font-size: 1.2rem;
+    padding: 15px;
+    font-size: 1.4rem;
+    font-weight: 700;
     text-align: center;
-    font-family: var(--font-body);
+    border: 3px solid #000;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#timer {
+    font-size: 2.5rem;
+    font-family: var(--font-heading);
+    text-align: center;
+    color: #000;
+    font-weight: 700;
 }
 
 .progress-container {
     width: 100%;
-    height: 4px;
-    background: #111;
-    margin: 20px 0;
+    height: 10px;
+    background: #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .progress-bar {
     height: 100%;
     background: var(--primary-color);
     width: 0%;
-    box-shadow: 0 0 10px var(--primary-color);
+    transition: width 0.5s;
 }
 
 .hint-box {
     display: none;
+    background: #fff9c4;
+    padding: 10px;
+    border-left: 5px solid var(--gold);
     margin-top: 10px;
-    padding: 15px;
-    background: rgba(0,0,0,0.5);
-    border: 1px dashed var(--primary-color);
-    font-style: italic;
-    font-size: 0.9rem;
-    color: #ff9999;
-}
-
-#feedback { margin-top: 10px; font-weight: bold; text-align: center; }
-.error { color: #ff0000; animation: shake 0.3s; }
-.success { color: #00ff00; }
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+    color: #333;
+    font-weight: 600;
 }

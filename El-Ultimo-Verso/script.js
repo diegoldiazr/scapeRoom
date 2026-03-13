@@ -3,6 +3,7 @@ const stations = [
         title: "Estación 1: El Custodio",
         location: "Palacio de Santa Cruz (Plaza de la Provincia)",
         coords: "40.4144,-3.7052",
+        address: "Plaza de la Provincia, 1 (Palacio de Santa Cruz)",
         img: "palacio_santa_cruz_madrid_1773341559525.png",
         narrative: "La noche antes de su ejecución en 1615, un hombre encadenado en la Cárcel de Corte entregó un trozo de cuero a su carcelero. 'Lo que Cervantes no se atrevió a imprimir, yo lo he vivido', susurró. Aquel hombre no era un criminal común, sino el último copista del manuscrito prohibido. Sus guardianes, grabados en la piedra del Palacio, aún custodian el acceso al primer secreto. Si lográis contar a los testigos mudos de aquel suplicio, podréis romper el primer sello de la Inquisición.",
         question: "¿Cuántas figuras humanas (presos) aparecen representadas en el relieve?",
@@ -25,6 +26,7 @@ const stations = [
         title: "Estación 2: El Suelo de Oro",
         location: "Calle de las Huertas (Quevedo)",
         coords: "40.4141,-3.6991",
+        address: "Calle de las Huertas (Frente al nº 16)",
         img: "calle_huertas_letras_madrid_1773341860529.png",
         narrative: "Habéis escapado de la sombra de la cárcel, pero la Hermandad del Acero os pisa los talones. Francisco de Quevedo, maestro de las pullas y espía de la Corona, sabía que la mejor forma de esconder algo es ponerlo a la vista de todos. En las calles de Madrid, el oro no está en los cofres, sino bajo vuestros pies. Buscad su proclama sobre el poder que mueve el mundo. Si encontráis la palabra que él consideraba el verdadero motor de la traición, tendréis la llave de la siguiente calle.",
         question: "¿Cuál es la última palabra de esa famosa frase grabada en el suelo?",
@@ -46,6 +48,7 @@ const stations = [
         title: "Estación 3: La Casa del Enemigo",
         location: "Calle de Cervantes, 11 (Casa Lope de Vega)",
         coords: "40.4143,-3.6975",
+        address: "Calle de Cervantes, 11 (Casa Museo Lope de Vega)",
         img: "casa_lope_de_vega_madrid_1773341937858.png",
         narrative: "Lope de Vega, el 'Fénix de los Ingenios', era un hombre de pasiones y secretos. Se dice que en esta casa escondió el manuscrito de su rival, Cervantes, para protegerlo de las llamas inquisitoriales. Pero Lope era astuto: marcó su propiedad con una fecha de sangre y tinta. Esa fecha no es solo un año, es el código de acceso a la red de túneles que conectaba las casas de los poetas. Mirad sobre el dintel, donde el granito se grabó por orden del Fénix.",
         question: "¿Cuál es el AÑO que aparece tallado en piedra al final de la inscripción sobre la puerta?",
@@ -67,6 +70,7 @@ const stations = [
         title: "Estación 4: El Guardián de Bronce",
         location: "Plaza de las Cortes (Estatua de Cervantes)",
         coords: "40.4161,-3.6963",
+        address: "Plaza de las Cortes (Estatua de Cervantes)",
         img: "estatua_cervantes_madrid_1773342370580.png",
         narrative: "Casi lo tenéis. Frente al Congreso, la figura de Miguel de Cervantes se alza no como un escritor, sino como un soldado. Su mirada apunta directamente hacia donde el tesoro fue enterrado. Pero cuidado: los espías de la Hermandad del Acero vigilan desde los balcones cercanos. Debéis actuar como si fuerais simples curiosos. Observad los relieves de su pedestal; allí, entre los molinos de la Mancha, se esconde la cifra exacta de la victoria. No miréis al gigante, mirad a sus brazos de madera.",
         question: "En el relieve donde aparece Don Quijote montado a caballo, ¿cuántas ASPAS tiene el molino de viento que se ve al fondo?",
@@ -88,6 +92,7 @@ const stations = [
         title: "Estación 5: El Descubrimiento Final",
         location: "Plaza de Santa Ana (Calderón de la Barca)",
         coords: "40.4147,-3.7008",
+        address: "Plaza de Santa Ana (Estatua de Calderón de la Barca)",
         img: "estatua_calderon_madrid_1773342386443.png",
         narrative: "¡Rápido! El contacto de la Sociedad del Lirio os espera en las sombras de la Plaza de Santa Ana. Pero hay un problema: el contacto ha sido interceptado. Solo ha dejado una señal bajo la estatua de Calderón de la Barca. La vida es sueño, pero vuestro éxito depende de una realidad tangible. Buscad la escena del 'Alcalde de Zalamea'. El número de personas allí reunidas es la combinación final para abrir el maletín digital que contiene el manuscrito original. Introducidlo y desapareced entre la multitud.",
         question: "¿Cuántos personajes (personas) aparecen representadas en total en esa escena esculpida?",
@@ -176,6 +181,7 @@ const Game = {
         const s = stations[this.currentStation];
         document.getElementById('station-title').textContent = s.title;
         document.getElementById('station-map').href = `https://www.google.com/maps/search/?api=1&query=${s.coords}`;
+        document.getElementById('station-address').textContent = s.address;
         document.getElementById('station-img').src = s.img;
         document.getElementById('station-narrative').innerHTML = s.narrative.replace(/\n\n/g, '<br><br>');
         document.getElementById('station-question').textContent = s.question;
