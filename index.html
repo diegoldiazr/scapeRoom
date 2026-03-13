@@ -3,178 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escape Room Madrid | Selector de Misiones</title>
+    <title>Escape Room Madrid | Selección de Misiones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #d4af37;
             --secondary: #8b0000;
-            --bg: #0f111a;
-            --card-bg: #1a1d29;
-            --text: #e0e0e0;
+            --bg: #050505;
+            --card-glass: rgba(26, 29, 41, 0.7);
+            --text: #ffffff;
+            --gold-glow: rgba(212, 175, 55, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Cinzel', 'Segoe UI', serif;
+            font-family: 'Quicksand', sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            background-image: radial-gradient(circle at center, #1a1d29 0%, #0f111a 100%);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+        }
+
+        /* Ambient Background Effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
         }
 
         .header {
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px 40px;
+            position: relative;
+            z-index: 2;
         }
 
         h1 {
-            font-size: 3rem;
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
             color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            letter-spacing: 8px;
+            margin-bottom: 5px;
+            background: linear-gradient(to bottom, #f1d37c 0%, #d4af37 50%, #9a7b1e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
         }
 
         .subtitle {
-            font-style: italic;
-            opacity: 0.8;
-            font-size: 1.2rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 3px;
+            opacity: 0.7;
+            font-size: 1rem;
+            text-transform: uppercase;
         }
 
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            width: 90%;
+        .main-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .game-showcase {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+            perspective: 1000px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .game-card {
-            background: var(--card-bg);
+            width: 320px;
+            height: 500px;
+            background: var(--card-glass);
             border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 12px;
+            border-radius: 20px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
             position: relative;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
         .game-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-20px) scale(1.05);
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
         }
 
-        .game-card.disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
+        .card-img-wrapper {
+            height: 60%;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
         }
 
-        .game-img {
-            height: 200px;
+        .card-img {
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
-            border-bottom: 2px solid var(--primary);
+            transition: transform 0.8s ease;
         }
 
-        .game-content {
-            padding: 20px;
+        .game-card:hover .card-img {
+            transform: scale(1.15);
+        }
+
+        .overlay-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, var(--card-glass) 0%, transparent 40%);
+        }
+
+        .card-info {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             text-align: center;
         }
 
         .game-title {
+            font-family: 'Cinzel', serif;
             color: var(--primary);
-            font-size: 1.5rem;
-            margin: 0 0 10px 0;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .game-meta {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .game-desc {
             font-size: 0.9rem;
-            line-height: 1.4;
+            line-height: 1.5;
+            opacity: 0.9;
+            font-weight: 300;
             margin-bottom: 20px;
-            min-height: 60px;
         }
 
-        .btn {
-            background: var(--secondary);
+        .play-btn {
+            background: linear-gradient(135deg, var(--secondary) 0%, #b00000 100%);
             color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-family: inherit;
-            text-transform: uppercase;
-            font-weight: bold;
-            cursor: pointer;
+            padding: 12px 0;
+            border-radius: 50px;
             text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
         }
 
-        .btn:hover {
-            background: #b00000;
+        .play-btn:hover {
+            letter-spacing: 4px;
+            box-shadow: 0 6px 20px rgba(139, 0, 0, 0.5);
+            background: linear-gradient(135deg, #b00000 0%, var(--secondary) 100%);
         }
 
-        .badge {
+        .difficulty {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--primary);
-            color: black;
-            padding: 5px 10px;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
             font-size: 0.7rem;
-            font-weight: bold;
-            border-radius: 3px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            border: 1px solid var(--primary);
+            z-index: 3;
+            backdrop-filter: blur(5px);
+        }
+
+        /* GM Access Icon */
+        .gm-trigger {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.2;
+            transition: all 0.3s;
+            z-index: 100;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .gm-trigger:hover {
+            opacity: 1;
+            background: rgba(212, 175, 55, 0.1);
+            transform: rotate(90deg);
+        }
+
+        /* Responsive Improvements */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .game-card { width: 100%; max-width: 350px; height: auto; min-height: 520px; }
+        }
+
+        /* Floating decoration */
+        .float-decoration {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            filter: blur(150px);
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: -1;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-50%, -50%); }
+            to { transform: translate(150%, 150%); }
         }
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="float-decoration"></div>
+    
+    <div class="gm-trigger" onclick="checkGMPassword()" title="Modo Game Master">⚙️</div>
+
+    <header class="header">
         <h1>Escape Room Madrid</h1>
-        <p class="subtitle">Selecciona tu próxima misión</p>
-    </div>
+        <p class="subtitle">Archivo de Misiones Clandestinas</p>
+    </header>
 
-    <div class="game-grid">
-        <!-- GAME 1 -->
-        <div class="game-card">
-            <span class="badge">DISPONIBLE</span>
-            <div class="game-img" style="background-image: url('El-Ultimo-Verso/palacio_santa_cruz_madrid_1773341559525.png');"></div>
-            <div class="game-content">
-                <h2 class="game-title">El Último Verso</h2>
-                <p class="game-desc">Un misterio oculto en el Barrio de las Letras. Proteged el manuscrito prohibido de Cervantes de la Hermandad del Acero.</p>
-                <a href="El-Ultimo-Verso/index.html" class="btn">Iniciar Misión</a>
+    <main class="main-container">
+        <div class="game-showcase">
+            <!-- MISSION 1 -->
+            <div class="game-card">
+                <span class="difficulty">MEDIA</span>
+                <div class="card-img-wrapper">
+                    <div class="card-img" style="background-image: url('El-Ultimo-Verso/palacio_santa_cruz_madrid_1773341559525.png');"></div>
+                    <div class="overlay-gradient"></div>
+                </div>
+                <div class="card-info">
+                    <div>
+                        <h2 class="game-title">El Último Verso</h2>
+                        <p class="game-meta">Barrio de las Letras | 90 Minutos</p>
+                        <p class="game-desc">Un manuscrito prohibido de Cervantes está en peligro. La Sociedad del Lirio requiere vuestro ingenio.</p>
+                    </div>
+                    <a href="El-Ultimo-Verso/index.html" class="play-btn">Iniciar Misión</a>
+                </div>
+            </div>
+
+            <!-- MISSION 2 -->
+            <div class="game-card">
+                <span class="difficulty">EXPERTO</span>
+                <div class="card-img-wrapper">
+                    <div class="card-img" style="background-image: url('La-Invocacion-del-Inquisidor-Ciego/plza_cruz_verde_inquisicion_madrid_1773398712007.png');"></div>
+                    <div class="overlay-gradient"></div>
+                </div>
+                <div class="card-info">
+                    <div>
+                        <h2 class="game-title">El Inquisidor Ciego</h2>
+                        <p class="game-meta">Madrid Austrias | 90 Minutos</p>
+                        <p class="game-desc">Leyendas del Santo Oficio y portales del siglo XVII. Sellad las sombras antes del Juicio Final.</p>
+                    </div>
+                    <a href="La-Invocacion-del-Inquisidor-Ciego/index.html" class="play-btn">Iniciar Destierro</a>
+                </div>
+            </div>
+
+            <!-- MISSION 3 -->
+            <div class="game-card">
+                <span class="difficulty">DIFÍCIL</span>
+                <div class="card-img-wrapper">
+                    <div class="card-img" style="background-image: url('El-Ultimo-Verso/casa_lope_de_vega_madrid_1773341937858.png'); filter: grayscale(0.5) sepia(0.5) hue-rotate(320deg);"></div>
+                    <div class="overlay-gradient"></div>
+                </div>
+                <div class="card-info">
+                    <div>
+                        <h2 class="game-title">El Manuscrito del Verdugo</h2>
+                        <p class="game-meta">Crímenes Reales | 90 Minutos</p>
+                        <p class="game-desc">Justicia y sangre en los callejones del viejo Madrid. Descubrid el secreto que el verdugo llevó a la tumba.</p>
+                    </div>
+                    <a href="El-Manuscrito-del-Verdugo/index.html" class="play-btn">Empezar Juicio</a>
+                </div>
             </div>
         </div>
-
-        <!-- GAME 2 -->
-        <div class="game-card">
-            <span class="badge">DISPONIBLE</span>
-            <div class="game-img" style="background-image: url('La-Invocacion-del-Inquisidor-Ciego/plza_cruz_verde_inquisicion_madrid_1773398712007.png');"></div>
-            <div class="game-content">
-                <h2 class="game-title">El Inquisidor Ciego</h2>
-                <p class="game-desc">Sombras en el Madrid de los Austrias. Enfrentaos a las leyendas más oscuras del Santo Oficio y sellad el portal.</p>
-                <a href="La-Invocacion-del-Inquisidor-Ciego/index.html" class="btn">Iniciar Destierro</a>
-            </div>
-            <!-- GAME 3 -->
-        <div class="game-card">
-            <span class="badge">DISPONIBLE</span>
-            <div class="game-img" style="background-image: url('El-Ultimo-Verso/casa_lope_de_vega_madrid_1773341937858.png'); filter: hue-rotate(300deg);"></div>
-            <div class="game-content">
-                <h2 class="game-title">El Manuscrito del Verdugo</h2>
-                <p class="game-desc">Crímenes y leyendas negras. Descifrad el diario del último verdugo de la Villa y salvad vuestra alma.</p>
-                <a href="El-Manuscrito-del-Verdugo/index.html" class="btn">Empezar Juicio</a>
-            </div>
-        </div>
-    </div>
-    <div style="position: fixed; top: 10px; right: 10px; opacity: 0.3; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.3'">
-        <button onclick="checkGMPassword()" style="background: none; border: none; color: var(--primary); cursor: pointer; font-size: 1.2rem;" title="Acceso GM">⚙️</button>
-    </div>
+    </main>
 
     <script>
         function checkGMPassword() {
