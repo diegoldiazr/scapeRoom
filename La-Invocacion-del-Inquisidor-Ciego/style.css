@@ -1,206 +1,168 @@
 :root {
-    --primary: #8b0000; /* Blood Crimson */
-    --accent: #d4af37; /* Burnished Gold */
-    --bg: #1c1c1c;
+    --crimson: #8b0000;
+    --gold: #d4af37;
+    --bg: #0f0f12;
+    --stone: #25262b;
     --paper: #f4ece1;
-    --text-on-dark: #e0e0e0;
-    --stone: #2a2a2a;
     --font-heading: 'Cinzel', serif;
     --font-body: 'Quicksand', sans-serif;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Quicksand:wght@400;500;600;700&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
     background-color: var(--bg);
-    color: var(--text-on-dark);
+    color: #e0e0e0;
     font-family: var(--font-body);
     line-height: 1.6;
-    background-image: 
-        radial-gradient(circle at center, #2c2c2c 0%, #1c1c1c 100%),
-        url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    min-height: 100vh;
 }
 
 .app-container {
     max-width: 550px;
     margin: 0 auto;
     padding: 20px;
-    min-height: 100vh;
 }
 
-/* Header & Timer */
+/* Mysterious Header */
 #countdown-timer {
     text-align: center;
     font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--primary);
-    text-shadow: 0 0 15px rgba(139, 0, 0, 0.4);
+    font-size: 3rem;
+    color: var(--crimson);
+    font-weight: 900;
+    text-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
     margin-bottom: 20px;
 }
 
 .progress-container {
     width: 100%;
-    height: 6px;
-    background: #444;
-    border-radius: 10px;
-    overflow: hidden;
+    height: 4px;
+    background: #333;
     margin-bottom: 30px;
 }
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(to right, var(--primary), #cc0000);
+    background: linear-gradient(to right, var(--crimson), #ff0000);
     width: 0%;
-    transition: width 0.5s ease;
+    transition: width 0.8s;
 }
 
-/* Screen Transitions */
-.screen { display: none; }
-.screen.active { display: block; animation: gothicFade 0.6s ease; }
-
-@keyframes gothicFade {
-    from { opacity: 0; filter: blur(5px); }
-    to { opacity: 1; filter: blur(0); }
-}
-
-/* Main Design */
+/* Premium Mystic Card */
 .card {
     background: var(--stone);
-    border-radius: 16px;
-    padding: 25px;
+    border-radius: 20px;
+    padding: 30px;
     border: 1px solid rgba(139, 0, 0, 0.3);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
 }
 
-h1, h2, h3 {
+.station-header { text-align: center; margin-bottom: 25px; }
+
+h1, h2 {
     font-family: var(--font-heading);
-    color: var(--accent);
-    text-align: center;
+    color: var(--gold);
+    font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-h2 { font-size: 1.25rem; margin-bottom: 5px; }
-
 .st-address {
     color: #888;
-    font-size: 0.75rem;
-    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    display: block;
-}
-
-/* Parchment for Narrative (Handwritten by Inquisitor) */
-.parchment {
-    background-color: var(--paper);
-    color: #2b1d0e;
-    padding: 25px;
-    border-radius: 4px;
-    margin: 20px 0;
-    box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
-    border: 1px solid #dcd3c1;
-    position: relative;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-}
-
-.parchment::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('https://www.transparenttextures.com/patterns/old-map.png');
-    opacity: 0.2;
-    pointer-events: none;
+    letter-spacing: 1px;
 }
 
 .location-img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid var(--primary);
-    margin: 15px 0;
-    filter: sepia(0.3) contrast(1.1);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 2px solid var(--crimson);
+    filter: grayscale(0.2) contrast(1.2) sepia(0.2);
 }
 
-/* Interface */
+/* Inquisitor Parchment */
+.parchment {
+    background: var(--paper);
+    color: #1a1a1a;
+    padding: 25px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-size: 1.05rem;
+    border: 1px solid #dcd3c1;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.1);
+}
+
+/* Interface Controls */
 .btn-map {
     background: #000;
-    color: var(--accent);
+    color: var(--gold);
     text-decoration: none;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 14px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    font-weight: 700;
+    font-weight: 800;
+    border: 1px solid var(--gold);
+    margin-bottom: 20px;
     font-size: 0.85rem;
-    border: 1px solid var(--accent);
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 16px;
+    padding: 18px;
     background: #000;
-    border: 1px solid var(--primary);
-    border-radius: 8px;
+    border: 2px solid var(--crimson);
+    border-radius: 12px;
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-align: center;
     font-family: inherit;
-    margin-top: 20px;
+    font-weight: 900;
+    margin-bottom: 20px;
 }
 
+.actions { display: flex; flex-direction: column; gap: 12px; }
+
 .btn {
-    width: 100%;
-    padding: 16px;
-    margin-top: 15px;
+    padding: 18px;
     border: none;
-    border-radius: 8px;
-    font-weight: 700;
+    border-radius: 12px;
+    font-weight: 800;
     text-transform: uppercase;
     cursor: pointer;
-    letter-spacing: 1px;
     font-family: inherit;
     transition: 0.3s;
 }
 
-.btn-primary {
-    background: var(--primary);
-    color: white;
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 1px solid #444;
-    color: #888;
-    font-size: 0.8rem;
-}
+.btn-primary { background: var(--crimson); color: white; }
+.btn-secondary { background: transparent; border: 1px solid #444; color: #777; font-size: 0.75rem; }
 
 .hint-box {
     display: none;
     background: #201a00;
-    border-left: 4px solid var(--accent);
+    border-left: 5px solid var(--gold);
     padding: 15px;
     margin-top: 15px;
-    font-size: 0.9rem;
-    color: #bfa55d;
+    color: var(--gold);
+    font-weight: 600;
 }
 
-#feedback {
-    text-align: center;
-    margin: 15px 0;
-    font-weight: 700;
-}
+#feedback { text-align: center; margin-top: 15px; font-weight: 700; }
+.error { color: #ff6b6b; }
+.success { color: #51cf66; font-size: 1.1rem; text-decoration: underline; }
 
-.error { color: #ff4d4d; }
-.success { color: #40ff40; }
-
-@media (max-width: 480px) {
-    .card { padding: 15px; }
+@media (max-width: 450px) {
+    .card { padding: 20px; }
+    h2 { font-size: 1.2rem; }
 }
