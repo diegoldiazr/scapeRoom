@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Alcorcón: El Paciente Cero | Street Escape</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Pantalla de Inicio -->
+        <div id="screen-intro" class="screen active">
+            <div class="card" style="text-align: center; padding: 40px 20px;">
+                <h1 style="font-size: 2rem; margin-bottom: 20px;">BIOHAZARD ALERT</h1>
+                <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--accent);">
+                    Madrid ha caído. El virus llega a la periferia. 
+                    Sois la última esperanza de Alcorcón.
+                </p>
+                <button class="btn btn-primary" onclick="Game.start()" style="width: 100%;">INGRESAR AL SECTOR</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de Juego -->
+        <div id="screen-game" class="screen">
+            <div id="countdown-timer">90:00</div>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <div id="penalty-notice">DETECCIÓN VIRAL -5 MIN</div>
+
+            <div class="card">
+                <div class="station-header">
+                    <h2 id="station-title">Cargando...</h2>
+                    <p id="station-location"></p>
+                    <p id="station-address" class="st-address"></p>
+                </div>
+
+                <a id="station-map" href="#" target="_blank" class="btn-map">
+                    📍 UBICAR PUNTO DE EXTRACCIÓN
+                </a>
+
+                <img id="station-img" src="" alt="Misión" class="location-img">
+
+                <div class="parchment">
+                    <p id="station-narrative"></p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <p id="station-question" style="font-weight: bold; color: var(--primary); text-transform: uppercase; font-size: 0.9rem; margin-bottom: 15px;"></p>
+                    <input type="text" id="user-answer" placeholder="CÓDIGO DE ACCESO" autocomplete="off">
+                    <div id="feedback"></div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="Game.checkAnswer()">VALIDAR CÓDIGO</button>
+                    <button class="btn btn-secondary" onclick="Game.showHint()">SOLICITAR FILTRO DE DATOS (-5 min)</button>
+                    <button class="btn btn-secondary" id="btn-curiosity" onclick="Game.showCuriosity()">ACCEDER A LA BASE DE DATOS</button>
+                </div>
+
+                <div id="hint-1" style="display: none; margin-top: 15px; color: var(--primary); font-size: 0.85rem; border: 1px dashed var(--primary); padding: 10px;"></div>
+                <div id="hint-2" style="display: none; margin-top: 10px; color: var(--primary); font-size: 0.85rem; border: 1px dashed var(--primary); padding: 10px;"></div>
+            </div>
+        </div>
+
+        <!-- Pantalla de Éxito Estación -->
+        <div id="screen-success" class="screen">
+            <div class="card" style="text-align: center;">
+                <h2 style="color: var(--accent); margin-bottom: 20px;">BIO-SCAN: LIMPIO</h2>
+                <p id="success-msg" style="margin-bottom: 30px;"></p>
+                <button class="btn btn-primary" onclick="Game.nextStation()" style="width: 100%;">IR A LA SIGUIENTE COORDENADA</button>
+            </div>
+        </div>
+
+        <!-- Pantalla Final -->
+        <div id="screen-final" class="screen">
+            <div class="card">
+                <h2 style="text-align: center; margin-bottom: 20px;">INFORME FINAL</h2>
+                <div id="final-text-container" class="parchment"></div>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'" style="width: 100%; margin-top: 20px;">REGRESAR AL COMANDO CENTRAL</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Curiosidades -->
+    <div id="curiosity-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; align-items: center; justify-content: center; padding: 20px;">
+        <div class="card" style="max-width: 400px; width: 100%;">
+            <div id="curiosity-content"></div>
+            <button class="btn btn-primary" onclick="Game.closeCuriosity()" style="width: 100%; margin-top: 20px;">CERRAR TRANSMISIÓN</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

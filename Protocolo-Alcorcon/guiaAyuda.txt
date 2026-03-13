@@ -1,0 +1,17 @@
+GUÍA DE AYUDA (SISTEMA DE PISTAS) - PROTOCOLO ALCORCÓN
+
+ESTACIÓN 1: El Mapa de Infección (Renfe Las Retamas)
+- Pista 1: Mira el mapa de la línea C-5 que hay en el andén o la salida. Cuenta las paradas que faltan para llegar al final de línea (Móstoles-El Soto).
+- Pista 2: El código es la suma de las estaciones que "ya han caído" (hacia Atocha) y las que "aún resisten" (hacia Móstoles) multiplicado por el número de la vía 2.
+
+ESTACIÓN 2: Suministros Médicos (Av. Retamas / Escultura)
+- Pista 1: Los "elementos" son los componentes verticales de la escultura metálica que parece una llama o espiga.
+- Pista 2: La cifra se obtiene sumando los pilares principales. No cuentes las farolas, solo la obra de arte.
+
+ESTACIÓN 3: El Refugio de las Letras (Iglesia Sta. María la Blanca)
+- Pista 1: El año está en la parte superior de la puerta principal o en un lateral en piedra tallada.
+- Pista 2: Fíjate en el número de cruces que ves en la fachada principal. Réstalo al año de la placa.
+
+ESTACIÓN 4: Punto de Extracción (Plaza del Ayuntamiento)
+- Pista 1: El escudo tiene tres símbolos principales. Los "cerros" o "montañitas" son la clave.
+- Pista 2: Cuenta cuántos castillos hay en el escudo de la fachada. Ese es el número que abre el búnker.
