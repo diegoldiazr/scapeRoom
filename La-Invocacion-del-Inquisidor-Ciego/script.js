@@ -43,7 +43,7 @@ const stations = [
         title: "Estación 3: El Decapitado de San Ginés",
         location: "Iglesia de San Ginés (Calle del Arenal)",
         coords: "40.4168,-3.7067",
-        img: "iglesia_san_gines_madrid_noche.png", // This one placeholder since it failed
+        img: "palacio_santa_cruz_madrid_1773341559525.png", // Usando palacio como placeholder oscuro
         narrative: "Una de las iglesias más antiguas y tenebrosas. Cuenta la leyenda que un hombre fue decapitado aquí por unos ladrones y su sombra volvió para tocar las campanas. El Inquisidor necesita que contéis las entradas al inframundo.",
         question: "Contad las puertas de madera de esta fachada y restadle las estatuas de santos en ese paño específico. ¿Cuál es el resultado?",
         answer: "3",
@@ -63,7 +63,7 @@ const stations = [
         title: "Estación 4: El Juicio de Álvaro de Bazán",
         location: "Plaza de la Villa",
         coords: "40.4154,-3.7104",
-        img: "plaza_de_la_villa_madrid_atardecer_misterioso.png", // Placeholder
+        img: "estatua_cervantes_madrid_1773342370580.png", // Usando estatua como placeholder
         narrative: "Estamos en el corazón del poder civil antiguo. Aquí se decidía quién vivía y quién moría. El Inquisidor os observa desde la estatua del gran almirante.",
         question: "Restad el año de nacimiento del año de muerte de Álvaro de Bazán (según el pedestal). ¿Cuál es la cifra?",
         answer: "62",
@@ -83,7 +83,7 @@ const stations = [
         title: "Estación 5: El Gran Auto de Fe",
         location: "Plaza Mayor (Arco de Cuchilleros)",
         coords: "40.4150,-3.7075",
-        img: "arco_de_cuchilleros_madrid_final_misterioso.png", // Placeholder
+        img: "estatua_calderon_madrid_1773342386443.png", // Usando estatua como placeholder final
         narrative: "Habéis llegado al epicentro de los Autos de Fe. Aquí el Inquisidor Ciego espera su liberación. Solo nombrando al arquitecto de las cenizas podréis sellar el portal.",
         question: "¿Quién fue el arquitecto que reconstruyó la plaza tras el incendio de 1790? (Escribe Nombre y Apellido)",
         answer: "Juan de Villanueva",

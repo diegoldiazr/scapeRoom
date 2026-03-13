@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control | Game Master</title>
+    <style>
+        :root {
+            --primary: #d4af37;
+            --secondary: #8b0000;
+            --bg: #0f111a;
+            --card-bg: #1a1d29;
+            --text: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 { color: var(--primary); text-transform: uppercase; letter-spacing: 2px; }
+
+        .selector-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .master-card {
+            background: var(--card-bg);
+            border: 1px solid var(--secondary);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .master-card:hover { transform: scale(1.05); }
+
+        .btn {
+            background: var(--primary);
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .home-link {
+            margin-top: 40px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Paneles del Game Master</h1>
+        <p>Acceso restringido para guardianes de la Sociedad del Lirio</p>
+    </div>
+
+    <div class="selector-grid">
+        <div class="master-card">
+            <h2>El Último Verso</h2>
+            <p>Guía de ayuda, soluciones y soporte para el Barrio de las Letras.</p>
+            <a href="El-Ultimo-Verso/master.html" class="btn">Abrir Panel</a>
+        </div>
+        <div class="master-card">
+            <h2>El Inquisidor Ciego</h2>
+            <p>Manual de invocación, pistas y control del Madrid de los Austrias.</p>
+            <a href="La-Invocacion-del-Inquisidor-Ciego/master.html" class="btn">Abrir Panel</a>
+        </div>
+    </div>
+
+    <a href="index.html" class="home-link">← Volver al Selector de Misiones</a>
+
+    <script>
+        // Check if coming from the password screen (basic session check)
+        if (sessionStorage.getItem('gm_access') !== 'granted') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

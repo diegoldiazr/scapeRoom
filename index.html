@@ -162,6 +162,20 @@
                 <a href="La-Invocacion-del-Inquisidor-Ciego/index.html" class="btn">Iniciar Destierro</a>
             </div>
         </div>
+    <div class="footer" style="margin-top: 50px; padding: 20px; border-top: 1px solid rgba(212,175,55,0.1); width: 100%; text-align: center;">
+        <button onclick="checkGMPassword()" style="background: transparent; border: 1px solid rgba(212,175,55,0.3); color: rgba(212,175,55,0.5); padding: 5px 15px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">⚙️ Modo Game Master</button>
     </div>
+
+    <script>
+        function checkGMPassword() {
+            const password = prompt("Introduce la clave de la Sociedad (Game Master):");
+            if (password === "5109") {
+                sessionStorage.setItem('gm_access', 'granted');
+                window.location.href = "master-selection.html";
+            } else if (password !== null) {
+                alert("❌ Clave incorrecta. Los intrusos no son bienvenidos.");
+            }
+        }
+    </script>
 </body>
 </html>
