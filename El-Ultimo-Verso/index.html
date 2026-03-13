@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Último Verso | Escape Room Madrid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- INTRO SCREEN -->
+        <section id="screen-intro" class="screen active">
+            <div class="card">
+                <h1>El Último Verso</h1>
+                <p style="text-align: center; font-style: italic; color: var(--primary-color);">Secretos en el Barrio de las Letras</p>
+                <div class="parchment" style="margin: 20px 0; max-height: 400px; overflow-y: auto; font-size: 0.95rem;">
+                    <p><strong>MADRID, MARZO DE 2026.</strong></p>
+                    <p>No estáis aquí por casualidad. Habéis sido convocados por la Sociedad del Lirio, una logia clandestina que ha protegido el verdadero patrimonio de Madrid desde los tiempos de Felipe II.</p>
+                    <p>Hace 48 horas, un antiguo legajo apareció en los sótanos de la Biblioteca Nacional. No era un libro común; eran las confesiones de un antiguo carcelero que custodiaba a los enemigos de la Corona. En ellas, se habla de un "Quijote Perdido", un manuscrito original que Cervantes nunca llegó a publicar por miedo a la Inquisición.</p>
+                    <p>La Hermandad del Acero, una facción de coleccionistas sin escrúpulos, está tras la pista. Si ellos lo encuentran, la obra desaparecerá para siempre en una cámara acorazada privada.</p>
+                    <p>Vuestra misión: Seguir el rastro de migas de pan que los antiguos guardianes dejaron esculpidos en el granito y el bronce de la ciudad. El Barrio de las Letras es vuestro tablero. La historia es vuestro mapa.</p>
+                    <p><strong>Regla de oro:</strong> No confiéis en nadie. No llaméis la atención. Observad lo que otros ignoran.</p>
+                    <hr style="border: 0; border-top: 1px solid rgba(212,175,55,0.3); margin: 15px 0;">
+                    <p><strong>NORMAS DE LA SOCIEDAD:</strong></p>
+                    <ul style="text-align: left; padding-left: 20px; font-size: 0.9rem;">
+                        <li>⏳ Tenéis **90 minutos** para lograrlo.</li>
+                        <li>❌ Cada **error** en una clave resta **5 minutos**.</li>
+                        <li>💡 Cada **pista** solicitada resta **5 minutos**.</li>
+                    </ul>
+                    <p style="margin-top: 15px;">¿Estáis listos para salvar el honor de las letras españolas? El tiempo empieza... <strong>¡YA!</strong></p>
+                </div>
+                <button class="btn btn-primary" onclick="Game.start()">Comenzar Misión</button>
+            </div>
+            <div class="footer-links">
+                <a href="master.html" target="_blank">Modo Game Master</a>
+            </div>
+        </section>
+
+        <!-- GAME SCREEN -->
+        <section id="screen-game" class="screen">
+            <div id="penalty-notice" style="position: absolute; top: 50px; left: 0; right: 0; text-align: center; color: #ff6b6b; font-weight: bold; font-size: 1.5rem; display: none; z-index: 100; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">-5:00</div>
+            <div id="countdown-timer" style="text-align: center; font-size: 2rem; font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 10px; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);">90:00</div>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            
+            <div id="station-info">
+                <h2 id="station-title">Cargando...</h2>
+                <a id="station-map" href="#" target="_blank" class="btn-map">
+                    <span>📍 Ver en Google Maps</span>
+                </a>
+                <img id="station-img" src="" alt="Ubicación" class="location-img">
+                
+                <div class="parchment">
+                    <p id="station-narrative"></p>
+
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <h3 id="station-question"></h3>
+                    <div class="input-group">
+                        <input type="text" id="user-answer" placeholder="Escribe tu respuesta..." autocomplete="off">
+                        <div id="feedback"></div>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="Game.checkAnswer()">Validar Clave</button>
+                    <button class="btn btn-secondary" onclick="Game.showHint()">💡 Pedir Pista</button>
+                    <button class="btn btn-secondary" style="border-color: #4db8ff; color: #4db8ff;" onclick="Game.showCuriosity()">📜 Curiosidades</button>
+                    
+                    <div id="hint-1" class="hint-box"></div>
+                    <div id="hint-2" class="hint-box"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURIOSITY MODAL -->
+        <div id="curiosity-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; padding: 20px;">
+            <div class="parchment" style="max-width: 500px; max-height: 80vh; overflow-y: auto; position: relative;">
+                <button onclick="Game.closeCuriosity()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5rem; cursor: pointer;">✕</button>
+                <div id="curiosity-content"></div>
+                <button class="btn btn-primary" onclick="Game.closeCuriosity()" style="margin-top: 20px;">Cerrar</button>
+            </div>
+        </div>
+
+        <!-- SUCCESS MODAL (Pseudo-screen) -->
+        <section id="screen-success" class="screen">
+            <div class="card" style="text-align: center;">
+                <h1 style="color: #51cf66;">¡CORRECTO!</h1>
+                <div class="parchment" style="margin-bottom: 2rem;">
+                    <p id="success-msg"></p>
+                </div>
+                <button class="btn btn-primary" onclick="Game.nextStation()">Avanzar a la siguiente pista</button>
+            </div>
+        </section>
+
+        <!-- FINAL SCREEN -->
+        <section id="screen-final" class="screen">
+            <div class="card">
+                <h1>Victoria</h1>
+                <div class="parchment" id="final-text-container" style="margin-bottom: 2rem; max-height: 50vh; overflow-y: auto; text-align: left;">
+                    <!-- Dynamic content from script.js -->
+                </div>
+                <h3 style="margin-top: 20px;">Recomendaciones de la Villa</h3>
+                <ul style="text-align: left; list-style: none; margin-bottom: 20px;">
+                    <li>🍺 <strong>Cervecería Alemana:</strong> Un clásico de 1904 en la misma plaza.</li>
+                    <li>🎭 <strong>Teatro Español:</strong> Corazón del arte madrileño frente a vosotros.</li>
+                    <li>🍷 <strong>La Lola:</strong> Raciones clásicas para vuestro banquete.</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="location.reload()">Reiniciar Misión</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
