@@ -119,6 +119,7 @@ h1, h2 {
     border-radius: 12px;
     margin-bottom: 20px;
     border: 2px solid var(--primary);
+    filter: contrast(1.1) saturate(1.2) brightness(1.05);
 }
 
 .parchment {
