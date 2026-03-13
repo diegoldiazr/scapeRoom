@@ -61,7 +61,7 @@ const stations = [
         location: "Convento de las Trinitarias (Barrio de las Letras)",
         coords: "40.4137,-3.6974",
         address: "Calle de Lope de Vega, 18 (Convento de las Trinitarias)",
-        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Monasterio_de_San_Ildefonso_y_San_Juan_de_Mata_(Trinitarias_Descalzas)_01.jpg",
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Convento_de_las_Trinitarias_Descalzas_(Madrid)_01.jpg",
         narrative: "En este convento descansan los restos de un hombre que sobrevivió a mil batallas, pero no a la envidia. Su pluma fue su mejor defensa.",
         question: "Buscad el nombre del hidalgo que aquí yace. ¿Cuál es su apellido?",
         answer: "cervantes",
