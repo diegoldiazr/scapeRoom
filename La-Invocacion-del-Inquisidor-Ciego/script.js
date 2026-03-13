@@ -257,12 +257,12 @@ const Game = {
         
         const finalMsg = `
             <p><strong>¡EL PORTAL HA SIDO SELLADO!</strong></p>
-            <p style="color: var(--primary-color); font-weight: bold; font-size: 1.1rem; border: 1px solid var(--secondary-color); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
+            <p style="color: var(--primary); font-weight: bold; font-size: 1.1rem; border: 1px solid var(--gold); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
                 Tiempo de purificación: ${timeTaken}
             </p>
             <p>La sombra del Inquisidor Ciego se desvanece entre las piedras del Arco de Cuchilleros. Vuestro valor ha evitado que Madrid caiga en un bucle de terror del siglo XVII.</p>
             <p>Habéis descifrado crímenes olvidados y leyendas que han dormido durante siglos bajo los adoquines del Madrid de los Austrias. Ya no sois simples caminantes; sois los Guardianes del Sello.</p>
-            <p style="color: var(--primary-color); font-weight: bold;">CIUDAD SEGURA. MISIÓN CUMPLIDA.</p>
+            <p style="color: var(--primary); font-weight: bold;">CIUDAD SEGURA. MISIÓN CUMPLIDA.</p>
             <p><strong>Vuestra recompensa:</strong> La Sociedad del Lirio os concede el Indulto de la Villa. Bajad las escaleras hacia las tabernas centenarias. El vino de hoy sabe mejor que el de ayer.</p>
             <p><strong>ORDEN FINAL:</strong> Disfrutad de la Plaza Mayor. Mirad sus balcones con otros ojos. La historia no se lee, se vive.</p>
         `;

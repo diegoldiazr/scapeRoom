@@ -265,12 +265,12 @@ const Game = {
         
         const finalMsg = `
             <p><strong>¡EL CÓDIGO HA SIDO ACEPTADO!</strong></p>
-            <p style="color: var(--primary-color); font-weight: bold; font-size: 1.1rem; border: 1px solid var(--primary-color); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
+            <p style="color: var(--primary); font-weight: bold; font-size: 1.1rem; border: 1px solid var(--primary); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
                 Tiempo total de la misión: ${timeTaken}
             </p>
             <p>De repente, vuestros teléfonos vibran con una notificación encriptada. El último número ha desbloqueado la ubicación del "Quijote Perdido".</p>
             <p>Mientras miráis la estatua de Calderón de la Barca, os dais cuenta de que no sois simples turistas. Formáis parte de una cadena de guardianes que se remonta a siglos atrás. Habéis descifrado lo que miles de personas pasan de largo cada día: la historia viva que Madrid susurra a quien sabe escuchar.</p>
-            <p style="color: var(--primary-color); font-weight: bold;">EL MANUSCRITO ESTÁ A SALVO.</p>
+            <p style="color: var(--primary); font-weight: bold;">EL MANUSCRITO ESTÁ A SALVO.</p>
             <p>Gracias a vuestra agudeza, los agentes de la Sociedad del Lirio ya han recuperado el legajo antes de que la Hermandad del Acero cruzara la Plaza. Habéis evitado que el mayor tesoro literario de la humanidad se convierta en el capricho de un multimillonario.</p>
             <p><strong>Vuestra recompensa:</strong> La Sociedad os ha concedido el honor de la "Libertad de la Villa". Mirad a vuestro alrededor. Estas calles ahora os pertenecen un poco más. Las risas en las terrazas de Santa Ana, el tintineo de las copas en la calle de la Victoria y el sol de marzo sobre los tejados de Madrid son vuestro banquete de victoria.</p>
             <p><strong>ORDEN FINAL:</strong> Guardad vuestros dispositivos. Buscad la taberna más cercana. Brindad por Cervantes, por Lope y, sobre todo, por vosotros.</p>
