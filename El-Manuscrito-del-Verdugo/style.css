@@ -110,6 +110,14 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
+.final-img {
+    width: 100%;
+    border-radius: 4px;
+    margin: 15px 0;
+    filter: grayscale(0.5) contrast(1.2);
+    border: 1px solid var(--primary);
+}
+
 .parchment {
     background: var(--paper);
     color: #000;

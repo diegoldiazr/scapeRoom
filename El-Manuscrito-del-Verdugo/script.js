@@ -207,6 +207,7 @@ const Game = {
         
         const epicFinal = `
             <p style="font-size: 1.2rem; line-height: 1.8;"><strong>¡EL JUICIO HA CONCLUIDO!</strong></p>
+            <img src="final-verdugo.png" class="final-img" alt="Juicio Final">
             <p>Habeis caminado por la fina línea que separa la justicia de la venganza. Las sombras de la Cárcel de Corte y los ecos de la Calle de la Cabeza han sido vuestros testigos. Con la <strong>${stations[4].answer.toUpperCase()}</strong> grabada en vuestra alma, habéis recuperado el Manuscrito del Verdugo antes de que el hacha cayera sobre la verdad.</p>
             <p>Madrid respira tranquila, sus secretos más oscuros vuelven a dormir bajo los adoquines del Barrio de las Letras gracias a vuestro ingenio implacable.</p>
             <p style="color: var(--primary); font-weight: 900; letter-spacing: 2px; margin: 20px 0;"> HONOR RESTAURADO. CASO CERRADO. </p>
