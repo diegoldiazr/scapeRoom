@@ -1,139 +1,184 @@
 :root {
-    --primary-color: #8b0000;
-    --accent: #ff4d4d;
-    --gold: #d4af37;
-    --bg: #ffffff;
-    --text: #000000;
+    --primary: #d00000; /* Blood Red */
+    --bg: #0d0d0d;
+    --paper: #e5e5e5;
+    --iron: #222222;
     --font-heading: 'Cinzel', serif;
     --font-body: 'Quicksand', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: #f2f2f2;
-    color: var(--text);
+    background-color: var(--bg);
+    color: white;
     font-family: var(--font-body);
-    margin: 0;
-    padding: 0;
+    line-height: 1.5;
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+        url('https://www.transparenttextures.com/patterns/dark-matter.png');
 }
 
 .app-container {
     max-width: 500px;
     margin: 0 auto;
     padding: 15px;
+    min-height: 100vh;
+}
+
+#timer {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--primary);
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: #222;
+    margin-bottom: 25px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary);
+    width: 0%;
+    transition: width 0.5s;
 }
 
 .screen { display: none; }
 .screen.active { display: block; }
 
-h1, h2, h3 {
-    font-family: var(--font-heading);
-    color: var(--primary-color);
-    text-align: center;
-}
-
+/* Crime Scene Card Style */
 .card {
-    background: white;
-    border: 3px solid var(--primary-color);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    background: var(--iron);
+    padding: 25px;
+    border: 2px solid #333;
+    position: relative;
 }
 
+.card::before {
+    content: 'TOP SECRET';
+    position: absolute;
+    top: 5px; right: 10px;
+    font-size: 0.6rem;
+    color: #444;
+    letter-spacing: 2px;
+}
+
+h1, h2 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 { font-size: 1.2rem; margin-bottom: 5px; }
+
+#st-address {
+    text-align: center;
+    color: #777;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Document/Manifest Style for narrative */
 .parchment {
-    background: #fff8eb;
+    background: var(--paper);
     color: #111;
     padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--gold);
-    margin: 15px 0;
-    font-size: 1.05rem;
+    margin: 20px 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    border-left: 8px solid var(--primary);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.3);
 }
 
 .location-img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 8px;
-    border: 3px solid var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.btn {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.btn-primary {
-    background: var(--primary-color);
-    color: white;
-}
-
-.btn-secondary {
-    background: white;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    filter: grayscale(1) contrast(1.5);
+    border: 2px solid #444;
+    margin: 10px 0;
 }
 
 .btn-map {
-    background: #000;
-    color: white;
+    background: white;
+    color: black;
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
+    padding: 12px;
+    font-weight: 900;
+    font-size: 0.8rem;
+    text-transform: uppercase;
 }
 
+/* Controls */
 input[type="text"] {
     width: 100%;
     padding: 15px;
-    font-size: 1.4rem;
-    font-weight: 700;
+    background: #000;
+    border: 2px solid #333;
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 900;
     text-align: center;
-    border: 3px solid #000;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
-#timer {
-    font-size: 2.5rem;
-    font-family: var(--font-heading);
-    text-align: center;
-    color: #000;
-    font-weight: 700;
+input[type="text"]:focus {
+    border-color: var(--primary);
+    outline: none;
 }
 
-.progress-container {
+.btn {
     width: 100%;
-    height: 10px;
-    background: #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    padding: 16px;
+    margin-top: 10px;
+    border: none;
+    font-family: inherit;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
-.progress-bar {
-    height: 100%;
-    background: var(--primary-color);
-    width: 0%;
-    transition: width 0.5s;
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #444;
+    font-size: 0.75rem;
 }
 
 .hint-box {
     display: none;
-    background: #fff9c4;
-    padding: 10px;
-    border-left: 5px solid var(--gold);
+    background: #1a0000;
+    color: var(--primary);
+    padding: 12px;
+    border: 1px dashed var(--primary);
     margin-top: 10px;
-    color: #333;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+#feedback { text-align: center; margin: 10px 0; font-weight: 800; font-size: 0.85rem; }
+.error { color: var(--primary); }
+.success { color: #fff; text-decoration: underline; }
+
+@media (max-width: 480px) {
+    .card { padding: 15px; }
 }

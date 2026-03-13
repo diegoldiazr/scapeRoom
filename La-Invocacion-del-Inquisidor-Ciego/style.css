@@ -1,147 +1,206 @@
 :root {
-    --primary-color: #8b0000; /* Dark Red */
-    --gold: #d4af37;
-    --bg: #ffffff;
-    --text: #000000;
+    --primary: #8b0000; /* Blood Crimson */
+    --accent: #d4af37; /* Burnished Gold */
+    --bg: #1c1c1c;
+    --paper: #f4ece1;
+    --text-on-dark: #e0e0e0;
+    --stone: #2a2a2a;
     --font-heading: 'Cinzel', serif;
     --font-body: 'Quicksand', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: #f7f7f7;
-    color: var(--text);
+    background-color: var(--bg);
+    color: var(--text-on-dark);
     font-family: var(--font-body);
-    margin: 0;
-    padding: 0;
+    line-height: 1.6;
+    background-image: 
+        radial-gradient(circle at center, #2c2c2c 0%, #1c1c1c 100%),
+        url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
 }
 
 .app-container {
-    max-width: 500px;
+    max-width: 550px;
     margin: 0 auto;
-    padding: 15px;
-}
-
-.screen { display: none; }
-.screen.active { display: block; }
-
-h1, h2, h3 {
-    font-family: var(--font-heading);
-    color: var(--primary-color);
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.card {
-    background: white;
-    border: 2px solid var(--primary-color);
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    min-height: 100vh;
+}
+
+/* Header & Timer */
+#countdown-timer {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-shadow: 0 0 15px rgba(139, 0, 0, 0.4);
     margin-bottom: 20px;
 }
 
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: #444;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary), #cc0000);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Screen Transitions */
+.screen { display: none; }
+.screen.active { display: block; animation: gothicFade 0.6s ease; }
+
+@keyframes gothicFade {
+    from { opacity: 0; filter: blur(5px); }
+    to { opacity: 1; filter: blur(0); }
+}
+
+/* Main Design */
+.card {
+    background: var(--stone);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--accent);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 { font-size: 1.25rem; margin-bottom: 5px; }
+
+.st-address {
+    color: #888;
+    font-size: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Parchment for Narrative (Handwritten by Inquisitor) */
 .parchment {
-    background: #fff8eb;
-    color: #1a1a1a;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--gold);
-    margin: 15px 0;
-    font-size: 1.05rem;
-    line-height: 1.5;
+    background-color: var(--paper);
+    color: #2b1d0e;
+    padding: 25px;
+    border-radius: 4px;
+    margin: 20px 0;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+    border: 1px solid #dcd3c1;
+    position: relative;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+
+.parchment::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/old-map.png');
+    opacity: 0.2;
+    pointer-events: none;
 }
 
 .location-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 10px;
-    border: 3px solid var(--primary-color);
-}
-
-.btn {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    border: none;
     border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 10px;
-    text-align: center;
-    text-decoration: none;
+    border: 2px solid var(--primary);
+    margin: 15px 0;
+    filter: sepia(0.3) contrast(1.1);
 }
 
-.btn-primary {
-    background: var(--primary-color);
-    color: white;
-}
-
-.btn-secondary {
-    background: white;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
+/* Interface */
 .btn-map {
     background: #000;
-    color: white;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: 1px solid var(--accent);
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 15px;
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-align: center;
-    border: 3px solid #333;
+    padding: 16px;
+    background: #000;
+    border: 1px solid var(--primary);
     border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-#countdown-timer {
-    font-size: 2.5rem;
-    font-family: var(--font-heading);
+    color: white;
+    font-size: 1.3rem;
     text-align: center;
-    color: #000;
-    font-weight: 700;
+    font-family: inherit;
+    margin-top: 20px;
 }
 
-.progress-container {
+.btn {
     width: 100%;
-    height: 10px;
-    background: #ddd;
-    border-radius: 5px;
-    margin: 15px 0;
+    padding: 16px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-family: inherit;
+    transition: 0.3s;
 }
 
-.progress-bar {
-    height: 100%;
-    background: var(--primary-color);
-    width: 0%;
-    transition: width 0.5s;
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #444;
+    color: #888;
+    font-size: 0.8rem;
 }
 
 .hint-box {
     display: none;
-    background: #fff9c4;
-    padding: 10px;
-    border-left: 5px solid var(--gold);
-    margin-top: 10px;
-    font-weight: 600;
+    background: #201a00;
+    border-left: 4px solid var(--accent);
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #bfa55d;
 }
 
-.footer-links {
+#feedback {
     text-align: center;
-    padding: 20px 0;
+    margin: 15px 0;
+    font-weight: 700;
 }
 
-.footer-links a { color: var(--primary-color); font-weight: 700; }
+.error { color: #ff4d4d; }
+.success { color: #40ff40; }
+
+@media (max-width: 480px) {
+    .card { padding: 15px; }
+}

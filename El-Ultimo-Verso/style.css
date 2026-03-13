@@ -1,83 +1,123 @@
 :root {
-    --primary-color: #8b0000; /* Dark Red for better contrast */
-    --accent-color: #d4af37; /* Gold for accents */
-    --bg-light: #f4f4f4;
-    --paper-bg: #ffffff;
-    --text-dark: #1a1a1a;
-    --text-muted: #555555;
+    --primary: #c9a031; /* Gold */
+    --accent: #1a2a44; /* Ink Blue */
+    --bg: #fcf9f2; /* Soft Paper */
+    --parchment-bg: #fffcf0;
+    --text-main: #2c241a;
+    --text-sec: #5d5246;
     --font-heading: 'Cinzel', serif;
     --font-body: 'Quicksand', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Quicksand:wght@400;500;600;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
+    background-color: var(--bg);
+    color: var(--text-main);
     font-family: var(--font-body);
     line-height: 1.6;
-    min-height: 100vh;
-    background-image: radial-gradient(circle at top, #ffffff 0%, #f4f4f4 100%);
+    background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');
 }
 
 .app-container {
-    max-width: 500px;
+    max-width: 550px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 20px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.screen {
-    display: none;
-    animation: fadeIn 0.4s ease-out forwards;
+/* Header & Timer */
+header {
+    margin-bottom: 30px;
 }
 
-.screen.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-h1, h2, h3 {
-    font-family: var(--font-heading);
-    color: var(--primary-color);
+#timer, #countdown-timer {
     text-align: center;
-    margin-bottom: 1.2rem;
-    text-transform: uppercase;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--accent);
     font-weight: 700;
+    margin-bottom: 5px;
 }
 
-h1 { font-size: 1.8rem; }
-h2 { font-size: 1.4rem; }
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: #e5e0d5;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
 
-/* Cards & Parchment - High Contrast for Daylight */
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary), #eec04b);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Screens */
+.screen { display: none; }
+.screen.active { display: flex; flex-direction: column; gap: 20px; }
+
+/* Main Card */
 .card {
-    background: #ffffff;
-    border: 2px solid var(--primary-color);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(201, 160, 49, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
+.station-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1, h2 {
+    font-family: var(--font-heading);
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.st-address {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* Narrative Area */
 .parchment {
-    background: #fff8eb;
-    color: #000000;
-    padding: 20px;
-    border-radius: 6px;
-    border: 1px solid #d4af37;
-    box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.1);
+    background: var(--parchment-bg);
+    border: 1px solid #e0d5c0;
+    padding: 25px;
+    border-radius: 4px;
+    font-style: italic;
     font-size: 1.05rem;
-    font-weight: 500;
+    position: relative;
+    margin-bottom: 25px;
+    box-shadow: inset 0 0 40px rgba(224, 213, 192, 0.2);
+}
+
+.parchment::before {
+    content: '"';
+    position: absolute;
+    top: -10px; left: 20px;
+    font-size: 4rem;
+    color: var(--primary);
+    opacity: 0.3;
+    font-family: 'Cinzel', serif;
 }
 
 /* Images */
@@ -85,98 +125,90 @@ h2 { font-size: 1.4rem; }
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    border: 3px solid var(--primary-color);
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 2px solid var(--primary);
 }
 
-/* Buttons */
-.btn {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    margin-top: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: all 0.2s;
-    text-align: center;
+/* Controls */
+.btn-map {
+    background: var(--accent);
+    color: white;
     text-decoration: none;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.btn-map:hover { background: #000; }
+
+input[type="text"] {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    text-align: center;
+    font-family: inherit;
+    font-weight: 700;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 15px rgba(201, 160, 49, 0.1);
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.btn {
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .btn-primary {
-    background: var(--primary-color);
+    background: var(--primary);
     color: white;
-    box-shadow: 0 4px 10px rgba(139, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(201, 160, 49, 0.3);
 }
 
 .btn-primary:active { transform: scale(0.98); }
 
 .btn-secondary {
-    background: white;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    background: #f1f1f1;
+    color: #666;
+    font-size: 0.8rem;
 }
 
-.btn-map {
-    background: #1a1a1a;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-/* Form Elements */
-input[type="text"] {
-    width: 100%;
+.hint-box {
+    display: none;
+    background: #fff9c4;
     padding: 15px;
-    background: #ffffff;
-    border: 2px solid #333333;
     border-radius: 8px;
-    color: #000;
-    font-size: 1.3rem;
-    text-align: center;
-    font-family: inherit;
-    font-weight: 700;
-}
-
-input[type="text"]:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    background: #fffaf0;
-}
-
-/* Timer */
-#timer, #countdown-timer {
-    text-align: center;
-    font-size: 2.5rem;
-    font-family: var(--font-heading);
-    color: #000; 
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-/* Progress Bar */
-.progress-container {
-    width: 100%;
-    height: 8px;
-    background: #e0e0e0;
-    border-radius: 10px;
-    margin: 15px 0;
-    overflow: hidden;
-    border: 1px solid #ccc;
-}
-
-.progress-bar {
-    height: 100%;
-    background: var(--primary-color);
-    width: 0%;
-    transition: width 0.5s ease;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    border-left: 4px solid #fbc02d;
+    font-weight: 600;
 }
 
 /* Feedback */
@@ -184,36 +216,15 @@ input[type="text"]:focus {
     text-align: center;
     margin: 10px 0;
     font-weight: 700;
+    font-size: 0.9rem;
 }
 
 .error { color: #d00000; }
 .success { color: #008000; }
 
-.hint-box {
-    display: none;
-    margin-top: 10px;
-    padding: 12px;
-    background: #fff9c4;
-    border-left: 5px solid #fbc02d;
-    color: #333;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.footer-links {
-    margin-top: 30px;
-    text-align: center;
-    padding-bottom: 30px;
-}
-
-.footer-links a {
-    color: var(--primary-color);
-    font-weight: 700;
-    font-size: 0.9rem;
-}
-
-/* Responsive tweaks */
-@media (max-width: 400px) {
-    h1 { font-size: 1.5rem; }
-    .card { padding: 15px; }
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .app-container { padding: 15px; }
+    .card { padding: 20px; }
+    h1, h2 { font-size: 1.2rem; }
 }

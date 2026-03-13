@@ -3,157 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Control | Game Master</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Panel Game Master | Madrid Oculto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #8b0000;
-            --gold: #d4af37;
-            --bg: #ffffff;
-            --surface: #f8f9fa;
-            --text: #1a1a1a;
+            --primary: #c9a031;
+            --bg: #0a0a0d;
+            --card: #16161a;
+            --text: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Quicksand', sans-serif;
-            background-color: var(--bg);
+            background: var(--bg);
             color: var(--text);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-image: radial-gradient(circle at center, #ffffff 0%, #f0f0f0 100%);
         }
 
         .header {
+            padding: 60px 20px;
             text-align: center;
-            padding: 40px 20px;
         }
 
         h1 {
             font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
             color: var(--primary);
+            letter-spacing: 4px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 2rem;
-            margin-bottom: 5px;
         }
 
         .subtitle {
-            text-transform: uppercase;
-            letter-spacing: 1px;
             font-size: 0.8rem;
-            color: #666;
-            font-weight: 700;
+            opacity: 0.6;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
         }
 
-        .selector-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            max-width: 900px;
-            width: 95%;
-            padding: 20px;
+            max-width: 1000px;
+            width: 90%;
+            margin-bottom: 60px;
         }
 
         .master-card {
-            background: #ffffff;
-            border: 2px solid var(--primary);
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
+            background: var(--card);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center;
         }
 
         .master-card:hover {
+            border-color: var(--primary);
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.1);
         }
 
         h2 {
             font-family: 'Cinzel', serif;
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
         }
 
         p {
             font-size: 0.9rem;
-            color: #333;
-            line-height: 1.5;
-            margin-bottom: 20px;
+            opacity: 0.7;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
         .btn {
             background: var(--primary);
-            color: #ffffff;
-            padding: 12px;
+            color: #000;
             text-decoration: none;
+            padding: 14px;
+            border-radius: 8px;
             font-weight: 700;
-            border-radius: 6px;
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 1px;
         }
 
         .back-link {
-            margin-top: 40px;
-            margin-bottom: 40px;
             color: var(--primary);
             text-decoration: none;
             font-weight: 700;
-            text-transform: uppercase;
             font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 1.6rem; }
-            .selector-grid { grid-template-columns: 1fr; }
+            text-transform: uppercase;
+            margin-top: auto;
+            padding-bottom: 40px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Paneles Game Master</h1>
+    <header class="header">
+        <h1>Centro de Mando</h1>
         <p class="subtitle">Logia de la Sociedad del Lirio</p>
-    </div>
+    </header>
 
-    <div class="selector-grid">
+    <div class="grid">
         <div class="master-card">
             <div>
                 <h2>El Último Verso</h2>
-                <p>Guía del Barrio de las Letras. Soluciones, pistas y logística del manuscrito.</p>
+                <p>Guía del Barrio de las Letras. Soluciones a las estrofas prohibidas de Cervantes.</p>
             </div>
-            <a href="El-Ultimo-Verso/master.html" class="btn">Abrir Guía Maestra</a>
+            <a href="El-Ultimo-Verso/master.html" class="btn">Abrir Consola</a>
         </div>
         <div class="master-card">
             <div>
                 <h2>El Inquisidor Ciego</h2>
-                <p>Manual del Madrid de los Austrias. Sella el portal con las respuestas correctas.</p>
+                <p>Manual del Madrid de los Austrias. Control de portales y códigos de fe.</p>
             </div>
-            <a href="La-Invocacion-del-Inquisidor-Ciego/master.html" class="btn">Abrir Guía Maestra</a>
+            <a href="La-Invocacion-del-Inquisidor-Ciego/master.html" class="btn">Abrir Consola</a>
         </div>
         <div class="master-card">
             <div>
                 <h2>El Manuscrito del Verdugo</h2>
-                <p>Archivo de crímenes y leyendas. Todo lo necesario para guiar a los investigadores.</p>
+                <p>Registro de crímenes. Todo lo necesario para asistir a los investigadores del cadalso.</p>
             </div>
-            <a href="El-Manuscrito-del-Verdugo/master.html" class="btn">Abrir Guía Maestra</a>
+            <a href="El-Manuscrito-del-Verdugo/master.html" class="btn">Abrir Consola</a>
         </div>
     </div>
 
-    <a href="index.html" class="back-link">
-        ⬅ Volver al Selector de Misiones
-    </a>
+    <a href="index.html" class="back-link">⬅ Cerrar Sesión Segura</a>
 
     <script>
         if (sessionStorage.getItem('gm_access') !== 'granted') {
