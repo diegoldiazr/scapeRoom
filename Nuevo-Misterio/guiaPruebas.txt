@@ -1,0 +1,87 @@
+## 🎭 Estación 1: El Quemadero de la Cruz Verde
+
+**Ubicación:** Plaza de la Cruz Verde.
+
+- **Texto Narrativo:** Habéis sido convocados por una carta anónima que huele a azufre. Aquí, donde la Inquisición ejecutaba sus sentencias, el aire aún pesa. Se dice que un Inquisidor ciego fue enterrado vivo bajo estos adoquines por practicar artes oscuras. Para aplacar su espíritu, debéis identificar el año de su mayor "espectáculo".
+    
+- **Instrucción de Observación:** Buscad la placa conmemorativa cerca de la fuente que narra la historia de la plaza.
+    
+- **El Acertijo:** "En el siglo XVII, el fuego purificó las almas en un Auto de Fe masivo. El año en que las llamas subieron más alto es la llave para vuestro primer sello." (Buscad el año del último Auto de Fe mencionado).
+    
+- **Solución:** 1680.
+    
+- **Mensaje de Éxito:** El suelo vibra bajo vuestros pies. El Inquisidor os ha escuchado. Corred hacia la calle Mayor antes de que las sombras os alcancen.
+
+- **Curiosidades:** Esta plaza era uno de los lugares donde se cumplían las penas de muerte de la Inquisición. Se llama "Cruz Verde" porque era el color de la cruz que portaba la hermandad que asistía a los reos en sus últimos momentos.
+
+---
+
+## 🎭 Estación 2: El Palacio de las Sombras
+
+**Ubicación:** Palacio de Cañete (Calle Mayor, 69).
+
+- **Texto Narrativo:** En este palacio ocurrió un crimen atroz: el asesinato del Marqués de Cañete. Dicen que su fantasma aún recorre los balcones buscando justicia. El Inquisidor ciego guardaba aquí el grimorio de las almas perdidas.
+    
+- **Instrucción de Observación:** Mirad fijamente el escudo que preside la entrada principal.
+    
+- **El Acertijo:** "Dos guardianes de piedra custodian el honor de la casa, pero sus ojos están vacíos. ¿Cuántas bestias rampantes protegen el linaje del Marqués en el escudo central?"
+    
+- **Solución:** 2.
+    
+- **Mensaje de Éxito:** Un susurro frío os hiela la nuca: "Seguid el rastro de incienso y sangre hacia la iglesia donde los muertos no descansan".
+
+- **Curiosidades:** El asesinato del Marqués de Cañete fue un escándalo en el Madrid del Siglo de Oro. Se dice que el asesino huyó por los pasadizos que conectan con el Madrid de los Austrias.
+
+---
+
+## 🎭 Estación 3: El Decapitado de San Ginés
+
+**Ubicación:** Iglesia de San Ginés (Calle del Arenal).
+
+- **Texto Narrativo:** Una de las iglesias más antiguas y tenebrosas. Cuenta la leyenda que un hombre fue decapitado aquí por unos ladrones y su sombra volvió para tocar las campanas. El Inquisidor necesita que contéis las entradas al inframundo.
+    
+- **Instrucción de Observación:** Observad la fachada de ladrillo y piedra que da a la calle Arenal.
+    
+- **El Acertijo:** "El arrepentimiento tiene tres puertas, pero solo una lleva a la salvación. Contad las puertas de madera de esta fachada y restadle el número de estatuas de santos que vigilan desde los nichos superiores."
+    
+- **Solución:** 3 (3 puertas - 0 estatuas en ese paño específico de pared).
+    
+- **Mensaje de Éxito:** Las campanas no suenan, pero vuestro corazón late más rápido. El círculo se está cerrando en la plaza donde el poder se hacía ley.
+
+- **Curiosidades:** Se dice que en el interior se conserva un "cocodrilo sagrado" (un caimán disecado) traído de las Américas, que aumentaba el aura mística y terrorífica del lugar en el pasado.
+
+---
+
+## 🎭 Estación 4: El Juicio de Álvaro de Bazán
+
+**Ubicación:** Plaza de la Villa.
+
+- **Texto Narrativo:** Estamos en el corazón del poder civil antiguo. Aquí se decidía quién vivía y quién moría. El Inquisidor os observa desde la estatua del gran almirante.
+    
+- **Instrucción de Observación:** Analizad el pedestal de la estatua de Don Álvaro de Bazán.
+    
+- **El Acertijo:** "El almirante no conoció la derrota, pero no pudo vencer al tiempo. Si restáis el año en que su corazón dejó de latir del año en que el mundo le vio nacer, obtendréis los años de su gloria mundana. Esa es vuestra cifra."
+    
+- **Solución:** 62 (1588 - 1526).
+    
+- **Mensaje de Éxito:** Habéis demostrado sabiduría. Solo queda un paso para desterrar al Inquisidor o uniros a él para siempre. Dirigíos al gran rectángulo de piedra, donde el pueblo gritaba '¡Justicia!'.
+
+- **Curiosidades:** La Plaza de la Villa es el conjunto monumental mejor conservado de Madrid, con edificios que datan del siglo XV (Casa de los Lujanes).
+
+---
+
+## 🎭 Estación 5: El Gran Auto de Fe
+
+**Ubicación:** Plaza Mayor (Final en el Arco de Cuchilleros).
+
+- **Texto Narrativo:** Habéis llegado al epicentro de los Autos de Fe. Aquí el Inquisidor Ciego espera su liberación. Solo nombrando al arquitecto de las cenizas podréis sellar el portal.
+    
+- **Instrucción de Observación:** Buscad la placa en el Arco de Cuchilleros que habla de la reconstrucción tras el incendio.
+    
+- **El Acertijo:** "Tres incendios intentaron borrar este lugar, pero un hombre lo levantó de las cenizas en 1790. ¿Quién fue el arquitecto que dio forma final a esta plaza?"
+    
+- **Solución:** Juan de Villanueva.
+    
+- **Mensaje de Éxito:** ¡LO HABÉIS LOGRADO! El espíritu del Inquisidor ha sido sellado. La ciudad vuelve a ser segura... por ahora. El hambre de vuestra victoria debe ser saciada. Bajad las escaleras de Cuchilleros, donde las tabernas centenarias os esperan para celebrar.
+
+- **Curiosidades:** El Arco de Cuchilleros es famoso por su enorme desnivel. Las casas que lo rodean son "rascacielos" del siglo XVIII que aprovechaban el foso de la antigua muralla.

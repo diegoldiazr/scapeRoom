@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Panel | El Inquisidor Ciego</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1a1a1a; color: #eee; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #d4af37; text-align: center; border-bottom: 2px solid #8b0000; padding-bottom: 10px; }
+        .section { background: #2a2a2a; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #8b0000; }
+        h2 { color: #d4af37; margin-top: 0; }
+        .answer { font-weight: bold; color: #ff6b6b; }
+        .pista { font-style: italic; color: #aaa; margin: 5px 0; }
+        pre { background: #111; padding: 10px; border-radius: 4px; overflow-x: auto; color: #51cf66; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guía del Game Master: El Inquisidor Ciego</h1>
+        
+        <div class="section">
+            <h2>Estación 1: Plaza de la Cruz Verde</h2>
+            <p><strong>Ubicación:</strong> Centro de la plaza (Fuente).</p>
+            <p><strong>Pregunta:</strong> Año del último Auto de Fe.</p>
+            <p><strong>Respuesta:</strong> <span class="answer">1680</span></p>
+            <p class="pista">Pista 1: Mirar la placa de la fuente.</p>
+            <p class="pista">Pista 2: Es un año del siglo XVII.</p>
+        </div>
+
+        <div class="section">
+            <h2>Estación 2: Palacio de Cañete</h2>
+            <p><strong>Ubicación:</strong> Calle Mayor, 69.</p>
+            <p><strong>Pregunta:</strong> Número de fieras rampantes.</p>
+            <p><strong>Respuesta:</strong> <span class="answer">2</span></p>
+            <p class="pista">Pista 1: Mirar el escudo sobre la puerta.</p>
+            <p class="pista">Pista 2: Contar los leones de piedra.</p>
+        </div>
+
+        <div class="section">
+            <h2>Estación 3: San Ginés</h2>
+            <p><strong>Ubicación:</strong> Calle Arenal.</p>
+            <p><strong>Pregunta:</strong> Puertas menos estatuas.</p>
+            <p><strong>Respuesta:</strong> <span class="answer">3</span></p>
+            <p class="pista">Pista 1: Fachada calle Arenal (3 puertas).</p>
+            <p class="pista">Pista 2: En ese paño de pared no hay estatuas (0).</p>
+        </div>
+
+        <div class="section">
+            <h2>Estación 4: Plaza de la Villa</h2>
+            <p><strong>Pregunta:</strong> Años de vida de Álvaro de Bazán.</p>
+            <p><strong>Respuesta:</strong> <span class="answer">62</span></p>
+            <p class="pista">Pista: Muerte (1588) - Nacimiento (1526).</p>
+        </div>
+
+        <div class="section">
+            <h2>Estación 5: Plaza Mayor</h2>
+            <p><strong>Pregunta:</strong> Arquitecto reconstructor.</p>
+            <p><strong>Respuesta:</strong> <span class="answer">Juan de Villanueva</span></p>
+            <p class="pista">Pista: Placa en el Arco de Cuchilleros.</p>
+        </div>
+
+        <div class="section">
+            <h2>Comandos Rápidos</h2>
+            <p>Para saltar estaciones o depurar:</p>
+            <pre>Game.currentStation = 2; Game.loadStation();</pre>
+        </div>
+    </div>
+</body>
+</html>

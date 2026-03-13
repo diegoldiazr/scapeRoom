@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #d4af37; /* Gold */
+    --secondary-color: #8b0000; /* Dark Blood Red */
+    --accent-color: #1a1a1a; /* Ink Black */
+    --bg-dark: #0a0a0a;
+    --paper-bg: #f5f1e3; /* Aged Parchment */
+    --text-dark: #2c2c2c;
+    --text-light: #e0e0e0;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Quicksand', sans-serif;
+    --transition-speed: 0.6s;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-image: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Transitions */
+.screen {
+    display: none;
+    animation: fadeIn var(--transition-speed) ease-out forwards;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; filter: blur(10px); }
+    to { opacity: 1; filter: blur(0); }
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Cards */
+.card {
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid var(--secondary-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+.parchment {
+    background: var(--paper-bg);
+    color: var(--text-dark);
+    padding: 2rem;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 5px 5px 25px rgba(0,0,0,0.5);
+    border: 1px solid #c9c0a3;
+    background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+}
+
+/* Images */
+.location-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--secondary-color);
+    filter: sepia(0.3) contrast(1.1);
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 1.1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--font-heading);
+}
+
+.btn-primary {
+    background: var(--secondary-color);
+    color: white;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: #a00000;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+    transform: scale(1.01);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.btn-map {
+    background: #333;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    padding: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid #444;
+}
+
+/* Form Elements */
+.input-group {
+    margin: 2rem 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    background: #000;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: var(--font-body);
+}
+
+/* Hints */
+.hint-box {
+    display: none;
+    margin-top: 1rem;
+    padding: 1.2rem;
+    background: rgba(139, 0, 0, 0.1);
+    border-left: 4px solid var(--secondary-color);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #ff9999;
+}
+
+/* Feedback */
+#feedback {
+    text-align: center;
+    margin-top: 1rem;
+    min-height: 24px;
+    font-weight: 600;
+}
+
+.error { color: #ff4d4d; }
+.success { color: #51cf66; }
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    width: 0%;
+    transition: width 1s ease;
+}
+
+.footer-links {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
